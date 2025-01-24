@@ -5,4 +5,5 @@
 
 ## The deadline is 27 January, 2025
 
-- You have three and a half hours left, all the best.
+- Run npm install and npm run start command to start.
+- You have three and a half days left, all the best.
