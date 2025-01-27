@@ -180,10 +180,10 @@ const FlashSalesOne = () => {
                                     className="position-absolute inset-block-start-0 inset-inline-start-0 w-100 h-100 object-fit-cover z-n1 flash-sales-item__bg"
                                 />
                                 <div className="flash-sales-item__thumb d-sm-block d-none">
-                                    <img src="assets/images/thumbs/flash-sale-img2.png" alt="" />
+                                    <img src="assets/images/thumbs/flash-sale-img3.png" alt="" />
                                 </div>
                                 <div className="flash-sales-item__content ms-sm-auto">
-                                    <h6 className="text-32 mb-20">Daily Snacks</h6>
+                                    <h6 className="text-32 mb-20">Daily Food</h6>
                                     <div className="countdown" id="countdown3">
                                         <ul className="countdown-list flex-align flex-wrap">
                                             <li className="countdown-list__item text-heading flex-align gap-4 text-sm fw-medium">

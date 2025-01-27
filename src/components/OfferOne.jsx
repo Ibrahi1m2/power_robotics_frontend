@@ -22,8 +22,8 @@ const OfferOne = () => {
                                 </div>
                                 <h4 className="text-white mb-8">$5 off your first order</h4>
                                 <div className="flex-align gap-8">
-                                    <span className="text-sm text-white">Delivery by 6:15am</span>
-                                    <span className="text-sm text-main-two-600">expired Aug 5</span>
+                                    <span className="text-sm text-white">Delivery by 8:15am</span>
+                                    <span className="text-sm text-main-two-600">expired Aug 20</span>
                                 </div>
                                 <Link
                                     to="/shop"
@@ -52,10 +52,10 @@ const OfferOne = () => {
                                 <div className="offer-card__logo mb-16 w-80 h-80 flex-center bg-white rounded-circle">
                                     <img src="assets/images/thumbs/offer-logo.png" alt="" />
                                 </div>
-                                <h4 className="text-white mb-8">$5 off your first order</h4>
+                                <h4 className="text-white mb-8">$15 off on meat</h4>
                                 <div className="flex-align gap-8">
                                     <span className="text-sm text-white">Delivery by 6:15am</span>
-                                    <span className="text-sm text-main-two-600">expired Aug 5</span>
+                                    <span className="text-sm text-main-two-600">expired Jun 5</span>
                                 </div>
                                 <Link
                                     to="/shop"
