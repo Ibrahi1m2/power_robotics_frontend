@@ -91,7 +91,6 @@ const BrandTwo = () => {
                     <div className="section-heading mb-24">
                         <div className="flex-between mr-point flex-wrap gap-8">
                             <h5 className="mb-0">Top Brands</h5>
-
                         </div>
                     </div>
                     <div className="top-brand__slider">
