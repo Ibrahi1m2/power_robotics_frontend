@@ -17,8 +17,8 @@ const ProductDetailsTwo = () => {
         "assets/images/thumbs/product-details-two-thumb1.png",
         "assets/images/thumbs/product-details-two-thumb2.png",
         "assets/images/thumbs/product-details-two-thumb3.png",
-        "assets/images/thumbs/product-details-two-thumb1.png",
-        "assets/images/thumbs/product-details-two-thumb2.png",
+        "assets/images/thumbs/product-details-two-thumb4.png",
+        "assets/images/thumbs/product-details-two-thumb5.png",
     ];
 
 

@@ -17,7 +17,7 @@ const ProductDetailsOne = () => {
         "assets/images/thumbs/product-details-thumb1.png",
         "assets/images/thumbs/product-details-thumb2.png",
         "assets/images/thumbs/product-details-thumb3.png",
-        "assets/images/thumbs/product-details-thumb2.png",
+        "assets/images/thumbs/product-details-thumb4.png",
     ];
 
     // increment & decrement

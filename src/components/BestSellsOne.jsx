@@ -71,7 +71,7 @@ const BestSellsOne = () => {
                                         </div>
                                         <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                             <Link to="/product-details" className="link text-line-2">
-                                                Taylor Farms Broccoli Florets Vegetables
+                                                Orville Redenbacher’s Movie Theater Butter Popcorn, Microwave Popcorn, 12 Count
                                             </Link>
                                         </h6>
                                         <div className="flex-align gap-4">
@@ -157,7 +157,7 @@ const BestSellsOne = () => {
                                         </div>
                                         <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                             <Link to="/product-details" className="link text-line-2">
-                                                Taylor Farms Broccoli Florets Vegetables
+                                                Mr. Noodles 16 Pcs Pack With free soss
                                             </Link>
                                         </h6>
                                         <div className="flex-align gap-4">
@@ -243,7 +243,7 @@ const BestSellsOne = () => {
                                         </div>
                                         <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                             <Link to="/product-details" className="link text-line-2">
-                                                Taylor Farms Broccoli Florets Vegetables
+                                                Miniket Standard 1kg Rice Very Fresh
                                             </Link>
                                         </h6>
                                         <div className="flex-align gap-4">
@@ -329,7 +329,7 @@ const BestSellsOne = () => {
                                         </div>
                                         <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                             <Link to="/product-details" className="link text-line-2">
-                                                Taylor Farms Broccoli Florets Vegetables
+                                                HORMEL GATHERINGS, Salami and Olives with Cheese and Crackers, Deli Supreme Party Plastic Tray, 40 oz
                                             </Link>
                                         </h6>
                                         <div className="flex-align gap-4">
