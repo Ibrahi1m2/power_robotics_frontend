@@ -49,7 +49,7 @@ const CartSection = () => {
                                                                 className="link text-line-2"
                                                                 tabIndex={0}
                                                             >
-                                                                Taylor Farms Broccoli Florets Vegetables
+                                                                HP ProBook 460 16 inch Touch screen G11 Notebook PC
                                                             </Link>
                                                         </h6>
                                                         <div className="flex-align gap-16 mb-16">
@@ -86,13 +86,13 @@ const CartSection = () => {
                                                 </div>
                                             </td>
                                             <td>
-                                                <span className="text-lg h6 mb-0 fw-semibold">$125.00</span>
+                                                <span className="text-lg h6 mb-0 fw-semibold">$3.00</span>
                                             </td>
                                             <td>
                                                 <QuantityControl initialQuantity={1} />
                                             </td>
                                             <td>
-                                                <span className="text-lg h6 mb-0 fw-semibold">$125.00</span>
+                                                <span className="text-lg h6 mb-0 fw-semibold">$5.00</span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -123,7 +123,7 @@ const CartSection = () => {
                                                                 className="link text-line-2"
                                                                 tabIndex={0}
                                                             >
-                                                                Taylor Farms Broccoli Florets Vegetables
+                                                                Men's Antigua Heather Black Ohio State Buckeyes Hold-Up Full-Zip Tri-Blend Jacket
                                                             </Link>
                                                         </h6>
                                                         <div className="flex-align gap-16 mb-16">
@@ -160,13 +160,13 @@ const CartSection = () => {
                                                 </div>
                                             </td>
                                             <td>
-                                                <span className="text-lg h6 mb-0 fw-semibold">$125.00</span>
+                                                <span className="text-lg h6 mb-0 fw-semibold">$2.00</span>
                                             </td>
                                             <td>
                                                 <QuantityControl initialQuantity={1} />
                                             </td>
                                             <td>
-                                                <span className="text-lg h6 mb-0 fw-semibold">$125.00</span>
+                                                <span className="text-lg h6 mb-0 fw-semibold">$3.00</span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -197,7 +197,7 @@ const CartSection = () => {
                                                                 className="link text-line-2"
                                                                 tabIndex={0}
                                                             >
-                                                                Taylor Farms Broccoli Florets Vegetables
+                                                                Girls Youth Navy Penn State Nittany Lions True Fan Soft Fleece Pullover Hoodie
                                                             </Link>
                                                         </h6>
                                                         <div className="flex-align gap-16 mb-16">
@@ -271,7 +271,7 @@ const CartSection = () => {
                                                                 className="link text-line-2"
                                                                 tabIndex={0}
                                                             >
-                                                                Taylor Farms Broccoli Florets Vegetables
+                                                                Men's Black Ohio State Buckeyes College Football Playoff 2025 Cotton Bowl Champions Victory Ahead Fleece Pullover Hoodie
                                                             </Link>
                                                         </h6>
                                                         <div className="flex-align gap-16 mb-16">

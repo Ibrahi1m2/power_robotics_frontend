@@ -102,7 +102,7 @@ const ProductListOne = () => {
                                 </div>
                                 <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                     <Link to="/product-details" className="link text-line-2">
-                                        Taylor Farms Broccoli Florets Vegetables
+                                        Shaad Flour
                                     </Link>
                                 </h6>
                                 <div className="flex-align gap-4">
@@ -166,7 +166,7 @@ const ProductListOne = () => {
                                 </div>
                                 <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                     <Link to="/product-details" className="link text-line-2">
-                                        Taylor Farms Broccoli Florets Vegetables
+                                        Golda Prawn
                                     </Link>
                                 </h6>
                                 <div className="flex-align gap-4">
@@ -294,7 +294,7 @@ const ProductListOne = () => {
                                 </div>
                                 <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                     <Link to="/product-details" className="link text-line-2">
-                                        Taylor Farms Broccoli Florets Vegetables
+                                        Jhatpot Deshi Paratha Family Pack (Premium)
                                     </Link>
                                 </h6>
                                 <div className="flex-align gap-4">
@@ -358,7 +358,7 @@ const ProductListOne = () => {
                                 </div>
                                 <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                     <Link to="/product-details" className="link text-line-2">
-                                        Taylor Farms Broccoli Florets Vegetables
+                                        PRAN Turmeric Powder
                                     </Link>
                                 </h6>
                                 <div className="flex-align gap-4">

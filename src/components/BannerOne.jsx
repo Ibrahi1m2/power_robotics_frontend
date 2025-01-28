@@ -68,7 +68,7 @@ const BannerOne = () => {
                                 <div className="banner-slider__inner flex-between position-relative">
                                     <div className="banner-item__content">
                                         <h1 className="banner-item__title bounce">
-                                            Daily Grocery Order and Get Express Delivery
+                                            Fresh and nutritious fruits – the finest quality now at your fingertips.
                                         </h1>
                                         <Link
                                             to="/shop"
@@ -89,7 +89,7 @@ const BannerOne = () => {
                                 <div className="banner-slider__inner flex-between position-relative">
                                     <div className="banner-item__content">
                                         <h1 className="banner-item__title">
-                                            Daily Grocery Order and Get Express Delivery
+                                            Premium packaged products – assured quality and taste.
                                         </h1>
                                         <Link
                                             to="/shop"

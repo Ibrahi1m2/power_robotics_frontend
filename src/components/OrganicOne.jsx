@@ -109,7 +109,7 @@ const OrganicOne = () => {
                                     </div>
                                     <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                         <Link to="/product-details" className="link text-line-2">
-                                            Taylor Farms Broccoli Florets Vegetables
+                                            EC Organic Sunflower Oil 3 Liter
                                         </Link>
                                     </h6>
                                     <div className="flex-align gap-4">
@@ -157,7 +157,7 @@ const OrganicOne = () => {
                                     </div>
                                     <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                         <Link to="/product-details" className="link text-line-2">
-                                            Taylor Farms Broccoli Florets Vegetables
+                                            Khormuz (Water Melon Black)
                                         </Link>
                                     </h6>
                                     <div className="flex-align gap-4">
@@ -205,7 +205,7 @@ const OrganicOne = () => {
                                     </div>
                                     <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                         <Link to="/product-details" className="link text-line-2">
-                                            Taylor Farms Broccoli Florets Vegetables
+                                            Marketside Organic Grass-Fed Ground Beef, 85% Lean/15% Fat, 1 lb
                                         </Link>
                                     </h6>
                                     <div className="flex-align gap-4">
@@ -253,7 +253,7 @@ const OrganicOne = () => {
                                     </div>
                                     <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                         <Link to="/product-details" className="link text-line-2">
-                                            Taylor Farms Broccoli Florets Vegetables
+                                            Marketside Organic Cage-Free Large Brown Eggs, 12 Count
                                         </Link>
                                     </h6>
                                     <div className="flex-align gap-4">
@@ -301,7 +301,7 @@ const OrganicOne = () => {
                                     </div>
                                     <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                         <Link to="/product-details" className="link text-line-2">
-                                            Taylor Farms Broccoli Florets Vegetables
+                                            Fresh Organic Gala Apples, 3 lb Bag
                                         </Link>
                                     </h6>
                                     <div className="flex-align gap-4">
@@ -349,7 +349,7 @@ const OrganicOne = () => {
                                     </div>
                                     <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                         <Link to="/product-details" className="link text-line-2">
-                                            Taylor Farms Broccoli Florets Vegetables
+                                            Organic Marketside Fresh Baby Peeled Carrots, 1 lb Bag
                                         </Link>
                                     </h6>
                                     <div className="flex-align gap-4">
@@ -397,7 +397,7 @@ const OrganicOne = () => {
                                     </div>
                                     <h6 className="title text-lg fw-semibold mt-12 mb-8">
                                         <Link to="/product-details" className="link text-line-2">
-                                            Taylor Farms Broccoli Florets Vegetables
+                                            Khormuz (Water Melon Black)
                                         </Link>
                                     </h6>
                                     <div className="flex-align gap-4">
