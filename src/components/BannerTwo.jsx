@@ -548,7 +548,7 @@ const BannerTwo = () => {
                                     <div className="banner-item-two__content">
                                         <span className="text-white mb-8 h6">Starting at only $250</span>
                                         <h2 className="banner-item-two__title bounce text-white">
-                                            Get The Sound You Love For Less
+                                            New Samsung Galaxy S25 Series
                                         </h2>
                                         <Link
                                             to="/shop"

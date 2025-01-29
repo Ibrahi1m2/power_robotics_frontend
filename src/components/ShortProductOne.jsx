@@ -91,7 +91,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        PRAN Ghee Premium 200gm
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -123,7 +123,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        Dates Crown Dabbas 1kg pack
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -155,7 +155,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        Beyond Meat Beyond Breakfast Sausage Plant-Based Breakfast Patties, Original 7.4 oz
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -187,7 +187,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        (12 pack) Annie's Organic Bernie O's, Canned Pasta in Tomato and Cheese Sauce, 15 oz
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -221,7 +221,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        PRAN Ghee Premium 200gm
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -253,7 +253,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        Dates Crown Dabbas 1kg pack
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -285,7 +285,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        Beyond Meat Beyond Breakfast Sausage Plant-Based Breakfast Patties, Original 7.4 oz
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -317,7 +317,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        (12 pack) Annie's Organic Bernie O's, Canned Pasta in Tomato and Cheese Sauce, 15 oz
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -364,7 +364,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        All Time Cookie 800 Gm
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -396,7 +396,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        Mutton Standard (Chagoler Mangsho)
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -428,7 +428,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        Patali Khejur Gur
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -460,7 +460,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        Marie Callender's Creamy Vermont Mac and Cheese Bowl, Frozen Meal, 13 oz Bowl (Frozen)
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -494,7 +494,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        All Time Cookie 800 Gm
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -526,7 +526,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        Mutton Standard (Chagoler Mangsho)
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -558,7 +558,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        Patali Khejur Gur
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -590,7 +590,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        Marie Callender's Creamy Vermont Mac and Cheese Bowl, Frozen Meal, 13 oz Bowl (Frozen)
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -637,7 +637,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        Khezur (Dates) Ajwa Premium 500gm (Pack)
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -669,7 +669,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        (12 pack) Annie's Organic Bernie O's, Canned Pasta in Tomato and Cheese Sauce, 15 oz
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -701,7 +701,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        Patali Khejur Gur
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -733,7 +733,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        (12 pack) Annie's Organic Bernie O's, Canned Pasta in Tomato and Cheese Sauce, 15 oz
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -767,7 +767,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        Khezur (Dates) Ajwa Premium 500gm (Pack)
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -799,7 +799,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        (12 pack) Annie's Organic Bernie O's, Canned Pasta in Tomato and Cheese Sauce, 15 oz
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -831,7 +831,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        Patali Khejur Gur
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -863,7 +863,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        (12 pack) Annie's Organic Bernie O's, Canned Pasta in Tomato and Cheese Sauce, 15 oz
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -910,7 +910,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        Beyond Meat Beyond Breakfast Sausage Plant-Based Breakfast Patties, Original 7.4 oz
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -942,7 +942,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        Patali Khejur Gur
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -974,7 +974,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        PRAN Ghee Premium 200gm
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -1006,7 +1006,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        Marie Callender's Creamy Vermont Mac and Cheese Bowl, Frozen Meal, 13 oz Bowl (Frozen)
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -1040,7 +1040,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        PRAN Ghee Premium 200gm
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -1072,7 +1072,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        Patali Khejur Gur
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -1104,7 +1104,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        Beyond Meat Beyond Breakfast Sausage Plant-Based Breakfast Patties, Original 7.4 oz
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
@@ -1136,7 +1136,7 @@ const ShortProductOne = () => {
                                                 </div>
                                                 <h6 className="title text-lg fw-semibold mt-8 mb-8">
                                                     <Link to="/product-details" className="link text-line-1">
-                                                        Taylor Farms Broccoli Florets Vegetables
+                                                        Marie Callender's Creamy Vermont Mac and Cheese Bowl, Frozen Meal, 13 oz Bowl (Frozen)
                                                     </Link>
                                                 </h6>
                                                 <div className="product-card__price flex-align gap-8">
