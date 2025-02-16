@@ -8,11 +8,10 @@ MarketPro-React-Template is a professional React-based e-commerce website templa
 - 3. Customizable Components: Easily adjustable features to match your business requirements.
 - 4. E-Commerce Features: Includes product listings, filters, shopping cart, and user authentication.
 
-## 🔗 Tech Stack
 
 ### **Client:** [MarketPro Site Link](https://market-pro-react-template.vercel.app)
 
-# Package name:
+### Tech Stack:
     1. ANIMATE.CSS  
     2. BOOTSTRAP
     3. ISOTOPE-LAYOUT
