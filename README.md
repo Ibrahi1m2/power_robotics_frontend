@@ -1,8 +1,8 @@
 
-# MarketPro-React-Template: An E-commerce Website
+## MarketPro-React-Template: An E-commerce Website
 MarketPro-React-Template is a professional React-based e-commerce website template. It features a modern design, responsive layout, and customizable components. This template is ideal for e-commerce businesses, offering product listings, category-based filtering, shopping cart functionality, user authentication, and options for dynamic backend integration. It's a perfect choice for startups or business owners looking for a ready-made solution for their online store. 
 
-## BulletPoint:-
+### BulletPoint:-
 - 1. Modern Design: Sleek and user-friendly interface tailored for e-commerce businesses
 - 2. Responsive Layout: Fully optimized for all devices, ensuring a seamless user experience.
 - 3. Customizable Components: Easily adjustable features to match your business requirements.
