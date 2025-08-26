@@ -1,400 +1,166 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
+import ProductCard from './ProductCard';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { motion } from "framer-motion";
+import { QrCode } from "@phosphor-icons/react";
+
+const heroVariants = {
+  hidden: { opacity: 0, y: 60 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1 } }
+};
 
 const ProductListOne = () => {
-    return (
-        <div className="product mt-24">
-            <div className="container container-lg">
-                <div className="row gy-4 g-12">
-                    <div className="col-xxl-2 col-lg-3 col-sm-4 col-6">
-                        <div className="product-card px-8 py-16 border border-gray-100 hover-border-main-600 rounded-16 position-relative transition-2">
-                            <Link
-                                to="/cart"
-                                className="product-card__cart btn bg-main-50 text-main-600 hover-bg-main-600 hover-text-white py-11 px-24 rounded-pill flex-align gap-8 position-absolute inset-block-start-0 inset-inline-end-0 me-16 mt-16"
-                            >
-                                Add <i className="ph ph-shopping-cart" />
-                            </Link>
-                            <Link
-                                to="/product-details"
-                                className="product-card__thumb flex-center"
-                            >
-                                <img src="assets/images/thumbs/product-img1.png" alt="" />
-                            </Link>
-                            <div className="product-card__content mt-12">
-                                <div className="product-card__price mb-16">
-                                    <span className="text-gray-400 text-md fw-semibold text-decoration-line-through">
-                                        $28.99
-                                    </span>
-                                    <span className="text-heading text-md fw-semibold ">
-                                        $14.99 <span className="text-gray-500 fw-normal">/Qty</span>{" "}
-                                    </span>
-                                </div>
-                                <div className="flex-align gap-6">
-                                    <span className="text-xs fw-bold text-gray-600">4.8</span>
-                                    <span className="text-15 fw-bold text-warning-600 d-flex">
-                                        <i className="ph-fill ph-star" />
-                                    </span>
-                                    <span className="text-xs fw-bold text-gray-600">(17k)</span>
-                                </div>
-                                <h6 className="title text-lg fw-semibold mt-12 mb-8">
-                                    <Link to="/product-details" className="link text-line-2">
-                                        Taylor Farms Broccoli Florets Vegetables
-                                    </Link>
-                                </h6>
-                                <div className="flex-align gap-4">
-                                    <span className="text-main-600 text-md d-flex">
-                                        <i className="ph-fill ph-storefront" />
-                                    </span>
-                                    <span className="text-gray-500 text-xs">
-                                        By Lucky Supermarket
-                                    </span>
-                                </div>
-                                <div className="mt-12">
-                                    <div
-                                        className="progress w-100  bg-color-three rounded-pill h-4"
-                                        role="progressbar"
-                                        aria-label="Basic example"
-                                        aria-valuenow={35}
-                                        aria-valuemin={0}
-                                        aria-valuemax={100}
-                                    >
-                                        <div
-                                            className="progress-bar bg-main-600 rounded-pill"
-                                            style={{ width: "35%" }}
-                                        />
-                                    </div>
-                                    <span className="text-gray-900 text-xs fw-medium mt-8">
-                                        Sold: 18/35
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-xxl-2 col-lg-3 col-sm-4 col-6">
-                        <div className="product-card px-8 py-16 border border-gray-100 hover-border-main-600 rounded-16 position-relative transition-2">
-                            <Link
-                                to="/cart"
-                                className="product-card__cart btn bg-main-50 text-main-600 hover-bg-main-600 hover-text-white py-11 px-24 rounded-pill flex-align gap-8 position-absolute inset-block-start-0 inset-inline-end-0 me-16 mt-16"
-                            >
-                                Add <i className="ph ph-shopping-cart" />
-                            </Link>
-                            <Link
-                                to="/product-details"
-                                className="product-card__thumb flex-center"
-                            >
-                                <img src="assets/images/thumbs/product-img2.png" alt="" />
-                            </Link>
-                            <div className="product-card__content mt-12">
-                                <div className="product-card__price mb-16">
-                                    <span className="text-gray-400 text-md fw-semibold text-decoration-line-through">
-                                        $28.99
-                                    </span>
-                                    <span className="text-heading text-md fw-semibold ">
-                                        $14.99 <span className="text-gray-500 fw-normal">/Qty</span>{" "}
-                                    </span>
-                                </div>
-                                <div className="flex-align gap-6">
-                                    <span className="text-xs fw-bold text-gray-600">4.8</span>
-                                    <span className="text-15 fw-bold text-warning-600 d-flex">
-                                        <i className="ph-fill ph-star" />
-                                    </span>
-                                    <span className="text-xs fw-bold text-gray-600">(17k)</span>
-                                </div>
-                                <h6 className="title text-lg fw-semibold mt-12 mb-8">
-                                    <Link to="/product-details" className="link text-line-2">
-                                        Shaad Flour
-                                    </Link>
-                                </h6>
-                                <div className="flex-align gap-4">
-                                    <span className="text-main-600 text-md d-flex">
-                                        <i className="ph-fill ph-storefront" />
-                                    </span>
-                                    <span className="text-gray-500 text-xs">
-                                        By Lucky Supermarket
-                                    </span>
-                                </div>
-                                <div className="mt-12">
-                                    <div
-                                        className="progress w-100  bg-color-three rounded-pill h-4"
-                                        role="progressbar"
-                                        aria-label="Basic example"
-                                        aria-valuenow={35}
-                                        aria-valuemin={0}
-                                        aria-valuemax={100}
-                                    >
-                                        <div
-                                            className="progress-bar bg-main-600 rounded-pill"
-                                            style={{ width: "35%" }}
-                                        />
-                                    </div>
-                                    <span className="text-gray-900 text-xs fw-medium mt-8">
-                                        Sold: 18/35
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-xxl-2 col-lg-3 col-sm-4 col-6">
-                        <div className="product-card px-8 py-16 border border-gray-100 hover-border-main-600 rounded-16 position-relative transition-2">
-                            <Link
-                                to="/cart"
-                                className="product-card__cart btn bg-main-50 text-main-600 hover-bg-main-600 hover-text-white py-11 px-24 rounded-pill flex-align gap-8 position-absolute inset-block-start-0 inset-inline-end-0 me-16 mt-16"
-                            >
-                                Add <i className="ph ph-shopping-cart" />
-                            </Link>
-                            <Link
-                                to="/product-details"
-                                className="product-card__thumb flex-center"
-                            >
-                                <img src="assets/images/thumbs/product-img3.png" alt="" />
-                            </Link>
-                            <div className="product-card__content mt-12">
-                                <div className="product-card__price mb-16">
-                                    <span className="text-gray-400 text-md fw-semibold text-decoration-line-through">
-                                        $28.99
-                                    </span>
-                                    <span className="text-heading text-md fw-semibold ">
-                                        $14.99 <span className="text-gray-500 fw-normal">/Qty</span>{" "}
-                                    </span>
-                                </div>
-                                <div className="flex-align gap-6">
-                                    <span className="text-xs fw-bold text-gray-600">4.8</span>
-                                    <span className="text-15 fw-bold text-warning-600 d-flex">
-                                        <i className="ph-fill ph-star" />
-                                    </span>
-                                    <span className="text-xs fw-bold text-gray-600">(17k)</span>
-                                </div>
-                                <h6 className="title text-lg fw-semibold mt-12 mb-8">
-                                    <Link to="/product-details" className="link text-line-2">
-                                        Golda Prawn
-                                    </Link>
-                                </h6>
-                                <div className="flex-align gap-4">
-                                    <span className="text-main-600 text-md d-flex">
-                                        <i className="ph-fill ph-storefront" />
-                                    </span>
-                                    <span className="text-gray-500 text-xs">
-                                        By Lucky Supermarket
-                                    </span>
-                                </div>
-                                <div className="mt-12">
-                                    <div
-                                        className="progress w-100  bg-color-three rounded-pill h-4"
-                                        role="progressbar"
-                                        aria-label="Basic example"
-                                        aria-valuenow={35}
-                                        aria-valuemin={0}
-                                        aria-valuemax={100}
-                                    >
-                                        <div
-                                            className="progress-bar bg-main-600 rounded-pill"
-                                            style={{ width: "35%" }}
-                                        />
-                                    </div>
-                                    <span className="text-gray-900 text-xs fw-medium mt-8">
-                                        Sold: 18/35
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-xxl-2 col-lg-3 col-sm-4 col-6">
-                        <div className="product-card px-8 py-16 border border-gray-100 hover-border-main-600 rounded-16 position-relative transition-2">
-                            <Link
-                                to="/cart"
-                                className="product-card__cart btn bg-main-50 text-main-600 hover-bg-main-600 hover-text-white py-11 px-24 rounded-pill flex-align gap-8 position-absolute inset-block-start-0 inset-inline-end-0 me-16 mt-16"
-                            >
-                                Add <i className="ph ph-shopping-cart" />
-                            </Link>
-                            <Link
-                                to="/product-details"
-                                className="product-card__thumb flex-center"
-                            >
-                                <img src="assets/images/thumbs/product-img1.png" alt="" />
-                            </Link>
-                            <div className="product-card__content mt-12">
-                                <div className="product-card__price mb-16">
-                                    <span className="text-gray-400 text-md fw-semibold text-decoration-line-through">
-                                        $28.99
-                                    </span>
-                                    <span className="text-heading text-md fw-semibold ">
-                                        $14.99 <span className="text-gray-500 fw-normal">/Qty</span>{" "}
-                                    </span>
-                                </div>
-                                <div className="flex-align gap-6">
-                                    <span className="text-xs fw-bold text-gray-600">4.8</span>
-                                    <span className="text-15 fw-bold text-warning-600 d-flex">
-                                        <i className="ph-fill ph-star" />
-                                    </span>
-                                    <span className="text-xs fw-bold text-gray-600">(17k)</span>
-                                </div>
-                                <h6 className="title text-lg fw-semibold mt-12 mb-8">
-                                    <Link to="/product-details" className="link text-line-2">
-                                        Taylor Farms Broccoli Florets Vegetables
-                                    </Link>
-                                </h6>
-                                <div className="flex-align gap-4">
-                                    <span className="text-main-600 text-md d-flex">
-                                        <i className="ph-fill ph-storefront" />
-                                    </span>
-                                    <span className="text-gray-500 text-xs">
-                                        By Lucky Supermarket
-                                    </span>
-                                </div>
-                                <div className="mt-12">
-                                    <div
-                                        className="progress w-100  bg-color-three rounded-pill h-4"
-                                        role="progressbar"
-                                        aria-label="Basic example"
-                                        aria-valuenow={35}
-                                        aria-valuemin={0}
-                                        aria-valuemax={100}
-                                    >
-                                        <div
-                                            className="progress-bar bg-main-600 rounded-pill"
-                                            style={{ width: "35%" }}
-                                        />
-                                    </div>
-                                    <span className="text-gray-900 text-xs fw-medium mt-8">
-                                        Sold: 18/35
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-xxl-2 col-lg-3 col-sm-4 col-6">
-                        <div className="product-card px-8 py-16 border border-gray-100 hover-border-main-600 rounded-16 position-relative transition-2">
-                            <Link
-                                to="/cart"
-                                className="product-card__cart btn bg-main-50 text-main-600 hover-bg-main-600 hover-text-white py-11 px-24 rounded-pill flex-align gap-8 position-absolute inset-block-start-0 inset-inline-end-0 me-16 mt-16"
-                            >
-                                Add <i className="ph ph-shopping-cart" />
-                            </Link>
-                            <Link
-                                to="/product-details"
-                                className="product-card__thumb flex-center"
-                            >
-                                <img src="assets/images/thumbs/product-img5.png" alt="" />
-                            </Link>
-                            <div className="product-card__content mt-12">
-                                <div className="product-card__price mb-16">
-                                    <span className="text-gray-400 text-md fw-semibold text-decoration-line-through">
-                                        $28.99
-                                    </span>
-                                    <span className="text-heading text-md fw-semibold ">
-                                        $14.99 <span className="text-gray-500 fw-normal">/Qty</span>{" "}
-                                    </span>
-                                </div>
-                                <div className="flex-align gap-6">
-                                    <span className="text-xs fw-bold text-gray-600">4.8</span>
-                                    <span className="text-15 fw-bold text-warning-600 d-flex">
-                                        <i className="ph-fill ph-star" />
-                                    </span>
-                                    <span className="text-xs fw-bold text-gray-600">(17k)</span>
-                                </div>
-                                <h6 className="title text-lg fw-semibold mt-12 mb-8">
-                                    <Link to="/product-details" className="link text-line-2">
-                                        Jhatpot Deshi Paratha Family Pack (Premium)
-                                    </Link>
-                                </h6>
-                                <div className="flex-align gap-4">
-                                    <span className="text-main-600 text-md d-flex">
-                                        <i className="ph-fill ph-storefront" />
-                                    </span>
-                                    <span className="text-gray-500 text-xs">
-                                        By Lucky Supermarket
-                                    </span>
-                                </div>
-                                <div className="mt-12">
-                                    <div
-                                        className="progress w-100  bg-color-three rounded-pill h-4"
-                                        role="progressbar"
-                                        aria-label="Basic example"
-                                        aria-valuenow={35}
-                                        aria-valuemin={0}
-                                        aria-valuemax={100}
-                                    >
-                                        <div
-                                            className="progress-bar bg-main-600 rounded-pill"
-                                            style={{ width: "35%" }}
-                                        />
-                                    </div>
-                                    <span className="text-gray-900 text-xs fw-medium mt-8">
-                                        Sold: 18/35
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-xxl-2 col-lg-3 col-sm-4 col-6">
-                        <div className="product-card px-8 py-16 border border-gray-100 hover-border-main-600 rounded-16 position-relative transition-2">
-                            <Link
-                                to="/cart"
-                                className="product-card__cart btn bg-main-50 text-main-600 hover-bg-main-600 hover-text-white py-11 px-24 rounded-pill flex-align gap-8 position-absolute inset-block-start-0 inset-inline-end-0 me-16 mt-16"
-                            >
-                                Add <i className="ph ph-shopping-cart" />
-                            </Link>
-                            <Link
-                                to="/product-details"
-                                className="product-card__thumb flex-center"
-                            >
-                                <img src="assets/images/thumbs/product-img6.png" alt="" />
-                            </Link>
-                            <div className="product-card__content mt-12">
-                                <div className="product-card__price mb-16">
-                                    <span className="text-gray-400 text-md fw-semibold text-decoration-line-through">
-                                        $28.99
-                                    </span>
-                                    <span className="text-heading text-md fw-semibold ">
-                                        $14.99 <span className="text-gray-500 fw-normal">/Qty</span>{" "}
-                                    </span>
-                                </div>
-                                <div className="flex-align gap-6">
-                                    <span className="text-xs fw-bold text-gray-600">4.8</span>
-                                    <span className="text-15 fw-bold text-warning-600 d-flex">
-                                        <i className="ph-fill ph-star" />
-                                    </span>
-                                    <span className="text-xs fw-bold text-gray-600">(17k)</span>
-                                </div>
-                                <h6 className="title text-lg fw-semibold mt-12 mb-8">
-                                    <Link to="/product-details" className="link text-line-2">
-                                        PRAN Turmeric Powder
-                                    </Link>
-                                </h6>
-                                <div className="flex-align gap-4">
-                                    <span className="text-main-600 text-md d-flex">
-                                        <i className="ph-fill ph-storefront" />
-                                    </span>
-                                    <span className="text-gray-500 text-xs">
-                                        By Lucky Supermarket
-                                    </span>
-                                </div>
-                                <div className="mt-12">
-                                    <div
-                                        className="progress w-100  bg-color-three rounded-pill h-4"
-                                        role="progressbar"
-                                        aria-label="Basic example"
-                                        aria-valuenow={35}
-                                        aria-valuemin={0}
-                                        aria-valuemax={100}
-                                    >
-                                        <div
-                                            className="progress-bar bg-main-600 rounded-pill"
-                                            style={{ width: "35%" }}
-                                        />
-                                    </div>
-                                    <span className="text-gray-900 text-xs fw-medium mt-8">
-                                        Sold: 18/35
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    const { addToWishlist, removeFromWishlist, wishlistItems } = useCart();
+    const [search, setSearch] = useState('');
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                setLoading(true);
+                
+                // Add timeout to prevent hanging
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+                
+                const response = await fetch('http://localhost:5000/api/products', {
+                    signal: controller.signal
+                });
+                
+                clearTimeout(timeoutId);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                setProducts(data);
+            } catch (error) {
+                console.error('Error fetching products:', error);
+                setError(error.message);
+                // Set empty array to prevent hanging
+                setProducts([]);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchProducts();
+    }, []);
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1200,
+            once: true,
+            offset: 50,
+        });
+    }, []);
+
+    const handleWishlistToggle = (productId, e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const product = {
+            id: productId,
+            name: "Product " + productId,
+            price: 14.99,
+            image: `assets/images/thumbs/product-img${productId}.png`
+        };
+        
+        if (wishlistItems.some(item => item.id === productId)) {
+            removeFromWishlist(productId);
+        } else {
+            addToWishlist(product);
+        }
+    };
+
+    const filteredProducts = products.filter(product =>
+        product.name.toLowerCase().includes(search.toLowerCase())
+    );
+
+    if (loading) {
+        return (
+            <div className="text-center py-80">
+                <div className="spinner-border text-primary" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </div>
+                <p className="mt-3">Loading products...</p>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className="text-center py-80">
+                <div className="alert alert-warning" role="alert">
+                    <h4>Unable to load products</h4>
+                    <p>{error}</p>
+                    <button 
+                        className="btn btn-primary" 
+                        onClick={() => window.location.reload()}
+                    >
+                        Try Again
+                    </button>
                 </div>
             </div>
-        </div>
+        );
+    }
 
-    )
-}
+    const whatsappNumber = "919003779504"; // Customer's number (no +, just country code and number)
+    const message = encodeURIComponent("Please find your order slip attached. (Attach the PDF before sending!)");
 
-export default ProductListOne
+    const handleSendWhatsApp = () => {
+      window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+      setTimeout(() => {
+        alert("Don't forget to attach your PDF slip in WhatsApp before sending!");
+      }, 500);
+    };
+
+    return (
+        <section className="product-grid-fullwidth py-80" style={{ width: '100vw', maxWidth: '100vw', marginLeft: '50%', transform: 'translateX(-50%)' }}>
+            <div className="section-heading center mb-40">
+                <h2 className="section-heading__title">Featured Products</h2>
+                <p className="section-heading__desc">Discover our bestsellers and new arrivals</p>
+            </div>
+            {/* Search Bar */}
+            <div className="d-flex justify-content-center mb-4">
+                <input
+                    type="text"
+                    className="form-control"
+                    style={{ maxWidth: 400, borderRadius: 24, padding: '12px 20px', fontSize: 18, boxShadow: '0 2px 8px rgba(60,60,120,0.04)' }}
+                    placeholder="Search products..."
+                    value={search}
+                    onChange={e => setSearch(e.target.value)}
+                />
+            </div>
+            <div className="row gx-5 gy-5 justify-content-center" style={{ width: '100vw', maxWidth: '100vw', margin: 0 }}>
+                {filteredProducts.map(product => (
+                    <div
+                        className="col-xxl-2 col-lg-3 col-sm-4 col-6 d-flex align-items-stretch"
+                        key={product.id}
+                        data-aos="fade-up"
+                        data-aos-delay={product.id * 100}
+                    >
+                        <ProductCard product={product} />
+                    </div>
+                ))}
+                {filteredProducts.length === 0 && (
+                    <div className="text-center text-gray-500 mt-4">No products found.</div>
+                )}
+            </div>
+            {/* QR Code above Place Order button */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 32 }}>
+              <QrCode size={48} color="#333" style={{ marginBottom: 8 }} />
+              <img src="/assets/images/qr-code.jpg" alt="QR Code" style={{ width: 240, height: 240, display: 'block' }} />
+            </div>
+            <button onClick={handleSendWhatsApp} className="btn btn-success">
+              Send to WhatsApp
+            </button>
+        </section>
+    );
+};
+
+export default ProductListOne;

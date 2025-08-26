@@ -1,8 +1,28 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
+import { useCart } from '../context/CartContext';
 
 const NewArrivalOne = () => {
+    const { addToWishlist, removeFromWishlist, wishlistItems } = useCart();
+
+    const handleWishlistToggle = (productId, e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const product = {
+            id: productId,
+            name: "Product " + productId,
+            price: 14.99,
+            image: `assets/images/thumbs/product-img${productId}.png`
+        };
+        
+        if (wishlistItems.some(item => item.id === productId)) {
+            removeFromWishlist(productId);
+        } else {
+            addToWishlist(product);
+        }
+    };
+
     function SampleNextArrow(props) {
         const { className, onClick } = props;
         return (
@@ -82,12 +102,12 @@ const NewArrivalOne = () => {
         <section className="new-arrival pb-80">
             <div className="container container-lg">
                 <div className="section-heading">
-                    <div className="flex-between flex-wrap gap-8">
+                    <div className="flex-between flex-wrap gap-8 mt-10">
                         <h5 className="mb-0">New Arrivals</h5>
                         <div className="flex-align mr-point gap-16">
                             <Link
-                                to="/shop"
-                                className="text-sm fw-medium text-gray-700 hover-text-main-600 hover-text-decoration-underline"
+                                to="/contact"
+                                className="mt-6 text-sm fw-medium text-gray-700 hover-text-main-600 hover-text-decoration-underline"
                             >
                                 View All Deals
                             </Link>
@@ -98,6 +118,14 @@ const NewArrivalOne = () => {
                     <Slider {...settings}>
                         <div>
                             <div className="product-card px-8 py-16 border border-gray-100 hover-border-main-600 rounded-16 position-relative transition-2">
+                                <button
+                                    onClick={(e) => handleWishlistToggle(20, e)}
+                                    className="btn position-absolute"
+                                    style={{ top: '16px', right: '16px', zIndex: 2, background: 'none', border: 'none' }}
+                                >
+                                    <i className={`ph ph-heart ${wishlistItems.some(item => item.id === 20) ? 'text-danger' : 'text-gray-400'}`} 
+                                       style={{ fontSize: '24px' }} />
+                                </button>
                                 <Link
                                     to="/product-details"
                                     className="product-card__thumb flex-center"
@@ -146,6 +174,14 @@ const NewArrivalOne = () => {
                         </div>
                         <div>
                             <div className="product-card px-8 py-16 border border-gray-100 hover-border-main-600 rounded-16 position-relative transition-2">
+                                <button
+                                    onClick={(e) => handleWishlistToggle(21, e)}
+                                    className="btn position-absolute"
+                                    style={{ top: '16px', right: '16px', zIndex: 2, background: 'none', border: 'none' }}
+                                >
+                                    <i className={`ph ph-heart ${wishlistItems.some(item => item.id === 21) ? 'text-danger' : 'text-gray-400'}`} 
+                                       style={{ fontSize: '24px' }} />
+                                </button>
                                 <Link
                                     to="/product-details"
                                     className="product-card__thumb flex-center"
@@ -194,6 +230,14 @@ const NewArrivalOne = () => {
                         </div>
                         <div>
                             <div className="product-card px-8 py-16 border border-gray-100 hover-border-main-600 rounded-16 position-relative transition-2">
+                                <button
+                                    onClick={(e) => handleWishlistToggle(22, e)}
+                                    className="btn position-absolute"
+                                    style={{ top: '16px', right: '16px', zIndex: 2, background: 'none', border: 'none' }}
+                                >
+                                    <i className={`ph ph-heart ${wishlistItems.some(item => item.id === 22) ? 'text-danger' : 'text-gray-400'}`} 
+                                       style={{ fontSize: '24px' }} />
+                                </button>
                                 <Link
                                     to="/product-details"
                                     className="product-card__thumb flex-center"
@@ -242,6 +286,14 @@ const NewArrivalOne = () => {
                         </div>
                         <div>
                             <div className="product-card px-8 py-16 border border-gray-100 hover-border-main-600 rounded-16 position-relative transition-2">
+                                <button
+                                    onClick={(e) => handleWishlistToggle(23, e)}
+                                    className="btn position-absolute"
+                                    style={{ top: '16px', right: '16px', zIndex: 2, background: 'none', border: 'none' }}
+                                >
+                                    <i className={`ph ph-heart ${wishlistItems.some(item => item.id === 23) ? 'text-danger' : 'text-gray-400'}`} 
+                                       style={{ fontSize: '24px' }} />
+                                </button>
                                 <Link
                                     to="/product-details"
                                     className="product-card__thumb flex-center"
@@ -290,6 +342,14 @@ const NewArrivalOne = () => {
                         </div>
                         <div>
                             <div className="product-card px-8 py-16 border border-gray-100 hover-border-main-600 rounded-16 position-relative transition-2">
+                                <button
+                                    onClick={(e) => handleWishlistToggle(24, e)}
+                                    className="btn position-absolute"
+                                    style={{ top: '16px', right: '16px', zIndex: 2, background: 'none', border: 'none' }}
+                                >
+                                    <i className={`ph ph-heart ${wishlistItems.some(item => item.id === 24) ? 'text-danger' : 'text-gray-400'}`} 
+                                       style={{ fontSize: '24px' }} />
+                                </button>
                                 <Link
                                     to="/product-details"
                                     className="product-card__thumb flex-center"
@@ -338,59 +398,19 @@ const NewArrivalOne = () => {
                         </div>
                         <div>
                             <div className="product-card px-8 py-16 border border-gray-100 hover-border-main-600 rounded-16 position-relative transition-2">
+                                <button
+                                    onClick={(e) => handleWishlistToggle(25, e)}
+                                    className="btn position-absolute"
+                                    style={{ top: '16px', right: '16px', zIndex: 2, background: 'none', border: 'none' }}
+                                >
+                                    <i className={`ph ph-heart ${wishlistItems.some(item => item.id === 25) ? 'text-danger' : 'text-gray-400'}`} 
+                                       style={{ fontSize: '24px' }} />
+                                </button>
                                 <Link
                                     to="/product-details"
                                     className="product-card__thumb flex-center"
                                 >
                                     <img src="assets/images/thumbs/product-img25.png" alt="" />
-                                </Link>
-                                <div className="product-card__content mt-12">
-                                    <div className="flex-align gap-6">
-                                        <span className="text-xs fw-bold text-gray-500">4.8</span>
-                                        <span className="text-15 fw-bold text-warning-600 d-flex">
-                                            <i className="ph-fill ph-star" />
-                                        </span>
-                                        <span className="text-xs fw-bold text-gray-500">(17k)</span>
-                                    </div>
-                                    <h6 className="title text-lg fw-semibold mt-12 mb-8">
-                                        <Link to="/product-details" className="link text-line-2">
-                                            C-500 Antioxidant Protect Dietary Supplement
-                                        </Link>
-                                    </h6>
-                                    <div className="flex-align gap-4">
-                                        <span className="text-main-600 text-md d-flex">
-                                            <i className="ph-fill ph-storefront" />
-                                        </span>
-                                        <span className="text-gray-500 text-xs">
-                                            By Lucky Supermarket
-                                        </span>
-                                    </div>
-                                    <div className="flex-between gap-8 mt-24 flex-wrap">
-                                        <div className="product-card__price">
-                                            <span className="text-gray-400 text-md fw-semibold text-decoration-line-through d-block">
-                                                $28.99
-                                            </span>
-                                            <span className="text-heading text-md fw-semibold ">
-                                                $14.99 <span className="text-gray-500 fw-normal">/Qty</span>{" "}
-                                            </span>
-                                        </div>
-                                        <Link
-                                            to="/cart"
-                                            className="product-card__cart btn btn-main py-11 px-24 rounded-pill flex-align gap-8"
-                                        >
-                                            Add <i className="ph ph-shopping-cart" />
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="product-card px-8 py-16 border border-gray-100 hover-border-main-600 rounded-16 position-relative transition-2">
-                                <Link
-                                    to="/product-details"
-                                    className="product-card__thumb flex-center"
-                                >
-                                    <img src="assets/images/thumbs/product-img21.png" alt="" />
                                 </Link>
                                 <div className="product-card__content mt-12">
                                     <div className="flex-align gap-6">

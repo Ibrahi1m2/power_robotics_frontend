@@ -1,5 +1,5 @@
 /* Font Family*/
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Exo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 $colors: (
   "main": (
@@ -196,50 +196,45 @@ $font-sizes: (
 :root {    
 
   /* Font Family Variable */
-  --heading-font: "Quicksand", sans-serif ;
-  --heading-font-two: "Exo", sans-serif;
-  --heading-font-three: "Outfit", sans-serif;;
-  --heading-font-four: "Dancing Script", cursive;;
+  --heading-font: "Inter", sans-serif;
+  --heading-font-two: "Inter", sans-serif;
+  --heading-font-three: "Inter", sans-serif;
+  --heading-font-four: "Inter", sans-serif;
   --body-font: "Inter", sans-serif;
-  
-  /* Font Size Variable Start */  
-  --heading-one: clamp(2.25rem, -0.0733rem + 6.3692vw, 4.5rem); // Min:36px - Max:72px
-  --heading-two: clamp(2rem, 0.7133rem + 2.8846vw, 3.5rem); // Min: 32px - Max: 56px
-  --heading-three: clamp(1.75rem, 0.3353rem + 2.1661vw, 3rem); // Min: 28px - Max: 48px
-  --heading-four: clamp(1.5rem, 0.5569rem + 1.444vw, 2.5rem); // Min: 24px - Max: 40px
-  --heading-five: clamp(1.25rem, 1.2rem + 0.722vw, 2.25rem); // Min: 20px - Max: 36px
-  --heading-six: clamp(1.125rem, 0.769rem + 0.6813vw, 1.5rem); // Min: 18px - Max-24px
 
-  --display-200: clamp(3.75rem, -0.0733rem + 6.3692vw, 12.5rem); // Min:40px - Max:200px
-  --display-one: clamp(2.5rem, -0.0733rem + 6.3692vw, 7.5rem); // Min:40px - Max:120px
-  /* Font Size End */
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
 
-  /* template main color */
-  --main-h: 148;
-  --main-s: 59%;
-  --main-l: 39%;
+  /* Box Shadow */
+  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+
+  /* Color Palette */
+  --main-h: 220; /* blue accent */
+  --main-s: 90%;
+  --main-l: 56%;
   --main: var(--main-h) var(--main-s) var(--main-l);
 
-  /* template main color */
-  --main-two-h: 25;
-  --main-two-s: 100%;
-  --main-two-l: 49%;
+  --main-two-h: 148; /* green accent */
+  --main-two-s: 59%;
+  --main-two-l: 39%;
   --main-two: var(--main-two-h) var(--main-two-s) var(--main-two-l);
 
-   /* White Color */
   --white: 0 0% 100%;
   --black: 235 49% 14%;
-  --light: 0 0% 51%;
-  
+  --light: 0 0% 98%;
   --heading-color: var(--black);
-  --body-color: var(--light);
-  --body-bg: var(--gray);
-  --border-color: 236 13% 77%;
-
-  --bg-color-one: #F3FAF2; 
-  --bg-color-two: #FFFBF4; 
-  --bg-color-three: #F1F1F1; 
-  --neutral: #121535; 
+  --body-color: #222;
+  --body-bg: #F7F7F9;
+  --border-color: 220 14% 90%;
+  --bg-color-one: #F7F7F9;
+  --bg-color-two: #F3F6FB;
+  --bg-color-three: #EDEDED;
+  --neutral: #222;
 
   --translate-x-middle: translateX(-50%); 
   --translate-y-middle: translateY(-50%); 

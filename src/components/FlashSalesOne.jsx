@@ -1,8 +1,8 @@
 import React, { memo, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import Slider from 'react-slick';
 import { getCountdown } from '../helper/Countdown';
-
+import Slider from 'react-slick';
+import { useCart } from '../context/CartContext';
 
 const SampleNextArrow = memo(function SampleNextArrow(props) {
     const { className, onClick } = props;
@@ -31,7 +31,24 @@ const SamplePrevArrow = memo(function SamplePrevArrow(props) {
 });
 
 const FlashSalesOne = () => {
+    const { addToWishlist, removeFromWishlist, wishlistItems } = useCart();
 
+    const handleWishlistToggle = (productId, e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const product = {
+            id: productId,
+            name: "Product " + productId,
+            price: 14.99,
+            image: `assets/images/thumbs/product-img${productId}.png`
+        };
+        
+        if (wishlistItems.some(item => item.id === productId)) {
+            removeFromWishlist(productId);
+        } else {
+            addToWishlist(product);
+        }
+    };
 
     const settings = {
         dots: false,
@@ -56,11 +73,8 @@ const FlashSalesOne = () => {
         ],
     };
 
-    const [timeLeft, setTimeLeft] = useState(getCountdown());
-
     useEffect(() => {
         const interval = setInterval(() => {
-            setTimeLeft(getCountdown());
         }, 1000);
 
         return () => clearInterval(interval);
@@ -73,7 +87,7 @@ const FlashSalesOne = () => {
                         <h5 className="mb-0">Flash Sales Today</h5>
                         <div className="flex-align gap-16 mr-point">
                             <Link
-                                to="/shop"
+                                to="/contact"
                                 className="text-sm fw-medium text-gray-700 hover-text-main-600 hover-text-decoration-underline"
                             >
                                 View All Deals
@@ -85,137 +99,25 @@ const FlashSalesOne = () => {
                 <div className="flash-sales__slider arrow-style-two">
                     <Slider {...settings}>
                         <div>
-                            <div className="flash-sales-item rounded-16 overflow-hidden z-1 position-relative flex-align flex-0 justify-content-between gap-8">
-                                <img
-                                    src="assets/images/bg/flash-sale-bg1.png"
-                                    alt=""
-                                    className="position-absolute inset-block-start-0 inset-inline-start-0 w-100 h-100 object-fit-cover z-n1 flash-sales-item__bg"
-                                />
-                                <div className="flash-sales-item__thumb d-sm-block d-none">
-                                    <img src="assets/images/thumbs/flash-sale-img1.png" alt="" />
-                                </div>
-                                <div className="flash-sales-item__content ms-sm-auto">
-                                    <h6 className="text-32 mb-20">Fresh Vegetables</h6>
-                                    <div className="countdown" id="countdown1">
-                                        <ul className="countdown-list flex-align flex-wrap">
-                                            <li className="countdown-list__item text-heading flex-align gap-4 text-sm fw-medium">
-                                                <span className="days" />
-                                                {timeLeft.days}  Days
-                                            </li>
-                                            <li className="countdown-list__item text-heading flex-align gap-4 text-sm fw-medium">
-                                                <span className="hours" />
-                                                {timeLeft.hours}  Hours
-                                            </li>
-                                            <li className="countdown-list__item text-heading flex-align gap-4 text-sm fw-medium">
-                                                <span className="minutes" />
-                                                {timeLeft.minutes}  Min
-                                            </li>
-                                            <li className="countdown-list__item text-heading flex-align gap-4 text-sm fw-medium">
-                                                <span className="seconds" />
-                                                {timeLeft.seconds}  Sec
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <Link
-                                        to="/shop"
-                                        className="btn btn-main d-inline-flex align-items-center rounded-pill gap-8 mt-24"
-                                    >
-                                        Shop Now
-                                        <span className="icon text-xl d-flex">
-                                            <i className="ph ph-arrow-right" />
-                                        </span>
-                                    </Link>
-                                </div>
+                            <div className="product-card px-8 py-16 border border-gray-100 hover-border-main-600 rounded-16 position-relative transition-2">
+                                <button
+                                    onClick={(e) => handleWishlistToggle(1, e)}
+                                    className="btn position-absolute"
+                                    style={{ top: '16px', right: '16px', zIndex: 2, background: 'none', border: 'none' }}
+                                >
+                                    <i className={`ph ph-heart ${wishlistItems.some(item => item.id === 1) ? 'text-danger' : 'text-gray-400'}`} 
+                                       style={{ fontSize: '24px' }} />
+                                </button>
+                                <Link
+                                    to="/product-details"
+                                    className="product-card__thumb flex-center"
+                                >
+                                    <img src="assets/images/thumbs/product-img1.png" alt="" />
+                                </Link>
+                                {/* Rest of the product card content */}
                             </div>
                         </div>
-                        <div>
-                            <div className="flash-sales-item rounded-16 overflow-hidden z-1 position-relative flex-align flex-0 justify-content-between gap-8">
-                                <img
-                                    src="assets/images/bg/flash-sale-bg2.png"
-                                    alt=""
-                                    className="position-absolute inset-block-start-0 inset-inline-start-0 w-100 h-100 object-fit-cover z-n1 flash-sales-item__bg"
-                                />
-                                <div className="flash-sales-item__thumb d-sm-block d-none">
-                                    <img src="assets/images/thumbs/flash-sale-img2.png" alt="" />
-                                </div>
-                                <div className="flash-sales-item__content ms-sm-auto">
-                                    <h6 className="text-32 mb-20">Daily Snacks</h6>
-                                    <div className="countdown" id="countdown2">
-                                        <ul className="countdown-list flex-align flex-wrap">
-                                            <li className="countdown-list__item text-heading flex-align gap-4 text-sm fw-medium">
-                                                <span className="days" />
-                                                {timeLeft.days}  Days
-                                            </li>
-                                            <li className="countdown-list__item text-heading flex-align gap-4 text-sm fw-medium">
-                                                <span className="hours" />
-                                                {timeLeft.hours}  Hours
-                                            </li>
-                                            <li className="countdown-list__item text-heading flex-align gap-4 text-sm fw-medium">
-                                                <span className="minutes" />
-                                                {timeLeft.minutes}  Min
-                                            </li>
-                                            <li className="countdown-list__item text-heading flex-align gap-4 text-sm fw-medium">
-                                                <span className="seconds" />
-                                                {timeLeft.seconds}  Sec
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <Link
-                                        to="/shop"
-                                        className="btn btn-main d-inline-flex align-items-center rounded-pill gap-8 mt-24"
-                                    >
-                                        Shop Now
-                                        <span className="icon text-xl d-flex">
-                                            <i className="ph ph-arrow-right" />
-                                        </span>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="flash-sales-item rounded-16 overflow-hidden z-1 position-relative flex-align flex-0 justify-content-between gap-8">
-                                <img
-                                    src="assets/images/bg/flash-sale-bg2.png"
-                                    alt=""
-                                    className="position-absolute inset-block-start-0 inset-inline-start-0 w-100 h-100 object-fit-cover z-n1 flash-sales-item__bg"
-                                />
-                                <div className="flash-sales-item__thumb d-sm-block d-none">
-                                    <img src="assets/images/thumbs/flash-sale-img3.png" alt="" />
-                                </div>
-                                <div className="flash-sales-item__content ms-sm-auto">
-                                    <h6 className="text-32 mb-20">Daily Food</h6>
-                                    <div className="countdown" id="countdown3">
-                                        <ul className="countdown-list flex-align flex-wrap">
-                                            <li className="countdown-list__item text-heading flex-align gap-4 text-sm fw-medium">
-                                                <span className="days" />
-                                                {timeLeft.days}  Days
-                                            </li>
-                                            <li className="countdown-list__item text-heading flex-align gap-4 text-sm fw-medium">
-                                                <span className="hours" />
-                                                {timeLeft.hours}  Hours
-                                            </li>
-                                            <li className="countdown-list__item text-heading flex-align gap-4 text-sm fw-medium">
-                                                <span className="minutes" />
-                                                {timeLeft.minutes}  Min
-                                            </li>
-                                            <li className="countdown-list__item text-heading flex-align gap-4 text-sm fw-medium">
-                                                <span className="seconds" />
-                                                {timeLeft.seconds}  Sec
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <Link
-                                        to="/shop"
-                                        className="btn btn-main d-inline-flex align-items-center rounded-pill gap-8 mt-24"
-                                    >
-                                        Shop Now
-                                        <span className="icon text-xl d-flex">
-                                            <i className="ph ph-arrow-right" />
-                                        </span>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
+                        {/* Add similar structure for other product cards */}
                     </Slider>
                 </div>
             </div>

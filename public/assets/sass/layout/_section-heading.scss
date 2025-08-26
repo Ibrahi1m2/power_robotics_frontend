@@ -4,7 +4,39 @@
     @include lg-screen {
         margin-bottom: 24px;
     }
-
+    text-align: left;
+    
+    &__title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #181A1E;
+        margin-bottom: 12px;
+        position: relative;
+        display: inline-block;
+        line-height: 1.15;
+        &::after {
+            content: '';
+            display: block;
+            width: 48px;
+            height: 4px;
+            background: hsl(var(--main-h, 220), var(--main-s, 60%), 60%);
+            border-radius: 2px;
+            margin-top: 8px;
+        }
+    }
+    &__desc {
+        font-size: 1.125rem;
+        color: #555;
+        margin-bottom: 0;
+        font-weight: 400;
+    }
+    &.center {
+        text-align: center;
+        .section-heading__title {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
     &.writing-mode {
         @media (min-width: 1200px) {
             writing-mode: vertical-lr;

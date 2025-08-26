@@ -16,7 +16,7 @@ const FooterThree = () => {
                 </Link>
               </div>
               <p className='mb-24'>
-                Marketpro become the largest computer parts, gaming pc parts,
+                Power Robotics become the largest computer parts, gaming pc parts,
                 and other IT related products.
               </p>
               <div className='flex-align gap-16 mb-16'>
@@ -24,10 +24,10 @@ const FooterThree = () => {
                   <i className='ph-fill ph-phone-call' />
                 </span>
                 <a
-                  href='tel:+00123456789'
+                  href='tel:+919003779504'
                   className='text-md text-gray-900 hover-text-main-600'
                 >
-                  +00 123 456 789
+                  +91 9003779504
                 </a>
               </div>
               <div className='flex-align gap-16 mb-16'>
@@ -35,10 +35,10 @@ const FooterThree = () => {
                   <i className='ph-fill ph-envelope' />
                 </span>
                 <a
-                  href='mailto:support24@marketpro.com'
+                  href='mailto:rashikf2007@gmail.com'
                   className='text-md text-gray-900 hover-text-main-600'
                 >
-                  support24@marketpro.com
+                  rashikf2007@gmail.com
                 </a>
               </div>
               <div className='flex-align gap-16 mb-16'>
@@ -46,7 +46,7 @@ const FooterThree = () => {
                   <i className='ph-fill ph-map-pin' />
                 </span>
                 <span className='text-md text-gray-900 '>
-                  789 Inner Lane, California, USA
+                  North main road,Eruvadi,Tirunelveli-627103,Tamilnadu
                 </span>
               </div>
             </div>
@@ -55,7 +55,7 @@ const FooterThree = () => {
               <ul className='footer-menu'>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Company Profile
@@ -63,7 +63,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     All Retail Store
@@ -71,7 +71,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Merchant Center
@@ -79,7 +79,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Affiliate
@@ -87,7 +87,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Contact Us
@@ -95,7 +95,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Feedback
@@ -103,7 +103,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Huawei Group
@@ -111,7 +111,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Rules &amp; Policy
@@ -124,7 +124,7 @@ const FooterThree = () => {
               <ul className='footer-menu'>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Help Center
@@ -140,7 +140,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Gift Card
@@ -148,7 +148,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Report Abuse
@@ -156,7 +156,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Submit and Dispute
@@ -164,7 +164,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Policies &amp; Rules
@@ -172,15 +172,15 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
-                    Online Shopping
+                    Online Support
                   </Link>
                 </li>
                 <li className=''>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Redeem Voucher
@@ -193,7 +193,7 @@ const FooterThree = () => {
               <ul className='footer-menu'>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/account'
                     className='text-gray-600 hover-text-main-600'
                   >
                     My Account
@@ -201,7 +201,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/account'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Order History
@@ -209,15 +209,15 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/cart'
                     className='text-gray-600 hover-text-main-600'
                   >
-                    Shoping Cart
+                    Shopping Cart
                   </Link>
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/wishlist'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Compare
@@ -225,7 +225,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Help Ticket
@@ -241,7 +241,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/account'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Order History
@@ -249,7 +249,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Product Support
@@ -262,7 +262,7 @@ const FooterThree = () => {
               <ul className='footer-menu'>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Become a Vendor
@@ -270,7 +270,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Affiliate Program
@@ -278,7 +278,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Privacy Policy
@@ -286,7 +286,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Our Suppliers
@@ -294,7 +294,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Extended Plan
@@ -302,7 +302,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Extended Plan
@@ -310,7 +310,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Community
@@ -318,7 +318,7 @@ const FooterThree = () => {
                 </li>
                 <li className='mb-16'>
                   <Link
-                    to='/shop'
+                    to='/contact'
                     className='text-gray-600 hover-text-main-600'
                   >
                     Community

@@ -75,7 +75,7 @@ const OrganicOne = () => {
     return (
         <section className="organic-food py-80">
             <div className="container container-lg">
-                <div className="section-heading">
+                {/* <div className="section-heading">
                     <div className="flex-between flex-wrap gap-8">
                         <h5 className="mb-0">Organic Food</h5>
                         <div className="flex-align mr-point gap-16">
@@ -88,8 +88,8 @@ const OrganicOne = () => {
 
                         </div>
                     </div>
-                </div>
-                <div className="organic-food__slider arrow-style-two">
+                </div> */}
+                {/* <div className="organic-food__slider arrow-style-two">
                     <Slider {...settings}>
                         <div>
                             <div className="product-card px-8 py-16 border border-gray-100 hover-border-main-600 rounded-16 position-relative transition-2">
@@ -428,7 +428,7 @@ const OrganicOne = () => {
                             </div>
                         </div>
                     </Slider>
-                </div>
+                </div> */}
             </div>
         </section>
 

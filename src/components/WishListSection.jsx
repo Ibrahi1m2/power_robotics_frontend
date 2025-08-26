@@ -1,373 +1,125 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Heart, ShoppingCartSimple } from '@phosphor-icons/react';
+import { Badge } from 'react-bootstrap';
 
 const WishListSection = () => {
+    const { wishlistItems, removeFromWishlist, addToCart } = useCart();
+
+    const handleMoveToCart = (item) => {
+        addToCart(item);
+        removeFromWishlist(item.id);
+    };
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+            },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 },
+        exit: { opacity: 0, x: -50, transition: { duration: 0.3 } },
+    };
+
+    const spring = {
+        type: "spring",
+        stiffness: 400,
+        damping: 30
+    };
+
   return (
-    <section className='cart py-80'>
-      <div className='container container-lg'>
-        <div className='row gy-4'>
-          <div className='col-lg-11'>
-            <div className='cart-table border border-gray-100 rounded-8'>
-              <div className='overflow-x-auto scroll-sm scroll-sm-horizontal'>
-                <table className='table rounded-8 overflow-hidden'>
-                  <thead>
-                    <tr className='border-bottom border-neutral-100'>
-                      <th className='h6 mb-0 text-lg fw-bold px-40 py-32 border-end border-neutral-100'>
-                        Delete
-                      </th>
-                      <th className='h6 mb-0 text-lg fw-bold px-40 py-32 border-end border-neutral-100'>
-                        Product Name
-                      </th>
-                      <th className='h6 mb-0 text-lg fw-bold px-40 py-32 border-end border-neutral-100'>
-                        Unit Price
-                      </th>
-                      <th className='h6 mb-0 text-lg fw-bold px-40 py-32 border-end border-neutral-100'>
-                        Stock Status
-                      </th>
-                      <th className='h6 mb-0 text-lg fw-bold px-40 py-32' />
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className=''>
-                      <td className='px-40 py-32 border-end border-neutral-100'>
-                        <button
-                          type='button'
-                          className='remove-tr-btn flex-align gap-12 hover-text-danger-600'
+        <motion.section 
+            className="wishlist-section py-80"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+        >
+            <div className="container container-lg">
+                {/* Wishlist Header with Badge */}
+                <div className="d-flex align-items-center justify-content-between mb-5">
+                  <h2 className="section-heading__title mb-0">My Wishlist</h2>
+                  <span style={{ fontWeight: 700, fontSize: 18 }}>
+                    <Badge bg="danger" pill style={{ fontSize: 16, padding: '8px 16px' }}>
+                      {wishlistItems.length}
+                    </Badge>
+                  </span>
+                </div>
+                <AnimatePresence>
+                    {wishlistItems.length === 0 ? (
+                        <motion.div
+                            key="empty"
+                            className="text-center py-5"
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -50 }}
                         >
-                          <i className='ph ph-x-circle text-2xl d-flex' />
+                            <Heart size={64} color="#f43f5e" style={{ marginBottom: 16, opacity: 0.7 }} />
+                            <h2 className="text-heading-2 mb-4">Your Wishlist is Empty</h2>
+                            <p className="text-gray-600 mb-5">Explore our products and save your favorites here.</p>
+                            <Link to="/" className="btn btn-main rounded-pill py-3 px-5 d-inline-flex align-items-center gap-2">
+                                <ShoppingCartSimple size={24} /> Discover Products
+                        </Link>
+                        </motion.div>
+                    ) : (
+                        <motion.div
+                            className="wishlist-items-wrapper"
+                            variants={containerVariants}
+                            initial="hidden"
+                            animate="visible"
+                        >
+                            <AnimatePresence>
+                                {wishlistItems.map((item) => (
+                                    <motion.div
+                                        key={item.id}
+                                        className="wishlist-item-card card border-0 shadow-lg mb-4"
+                                        variants={itemVariants}
+                                        exit="exit"
+                                        whileHover={{ scale: 1.035, boxShadow: '0 12px 36px rgba(60,60,120,0.22)' }}
+                                        transition={spring}
+                                        style={{ borderRadius: 28, overflow: 'hidden', background: 'rgba(255,255,255,0.98)' }}
+                                    >
+                                        <div className="card-body d-flex align-items-center p-4" style={{ borderRadius: 24, background: 'rgba(255,255,255,0.95)', boxShadow: '0 2px 8px rgba(60,60,120,0.04)' }}>
+                                            <img
+                                                src={item.image_url}
+                                                alt={item.name}
+                                                className="rounded shadow-sm"
+                                                style={{ width: 56, height: 56, objectFit: 'cover', border: '2px solid #e5e7eb', background: '#f8fafc', marginRight: 24 }}
+                                            />
+                                            <div className="ms-2 flex-grow-1">
+                                                <h5 className="mb-1" style={{ fontWeight: 700, fontSize: 20 }}>{item.name}</h5>
+                                                <p className="text-muted mb-2" style={{ fontSize: 16 }}>${item.price.toFixed(2)}</p>
+                        <button
+                                                    className="btn btn-main rounded-pill d-inline-flex align-items-center gap-2 fw-bold"
+                                                    style={{ fontSize: 16 }}
+                                                    onClick={() => handleMoveToCart(item)}
+                        >
+                                                    <ShoppingCartSimple size={20} /> Add to Cart
+                        </button>
+                        </div>
+                        <button
+                                                className="btn btn-outline-danger rounded-pill ms-auto px-4 py-2"
+                                                style={{ fontWeight: 600 }}
+                                                onClick={() => removeFromWishlist(item.id)}
+                        >
                           Remove
                         </button>
-                      </td>
-                      <td className='px-40 py-32 border-end border-neutral-100'>
-                        <div className='table-product d-flex align-items-center gap-24'>
-                          <Link
-                            to='/product-details-two'
-                            className='table-product__thumb border border-gray-100 rounded-8 flex-center '
-                          >
-                            <img
-                              src='assets/images/thumbs/product-two-img1.png'
-                              alt=''
-                            />
-                          </Link>
-                          <div className='table-product__content text-start'>
-                            <h6 className='title text-lg fw-semibold mb-8'>
-                              <Link
-                                to='/product-details'
-                                className='link text-line-2'
-                                tabIndex={0}
-                              >
-                                Taylor Farms Broccoli Florets Vegetables
-                              </Link>
-                            </h6>
-                            <div className='flex-align gap-16 mb-16'>
-                              <div className='flex-align gap-6'>
-                                <span className='text-md fw-medium text-warning-600 d-flex'>
-                                  <i className='ph-fill ph-star' />
-                                </span>
-                                <span className='text-md fw-semibold text-gray-900'>
-                                  4.8
-                                </span>
                               </div>
-                              <span className='text-sm fw-medium text-gray-200'>
-                                |
-                              </span>
-                              <span className='text-neutral-600 text-sm'>
-                                128 Reviews
-                              </span>
-                            </div>
-                            <div className='flex-align gap-16'>
-                              <Link
-                                to='/cart'
-                                className='product-card__cart btn bg-gray-50 text-heading text-sm hover-bg-main-600 hover-text-white py-7 px-8 rounded-8 flex-center gap-8 fw-medium'
-                              >
-                                Camera
-                              </Link>
-                              <Link
-                                to='/cart'
-                                className='product-card__cart btn bg-gray-50 text-heading text-sm hover-bg-main-600 hover-text-white py-7 px-8 rounded-8 flex-center gap-8 fw-medium'
-                              >
-                                Videos
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td className='px-40 py-32 border-end border-neutral-100'>
-                        <span className='text-lg h6 mb-0 fw-semibold'>
-                          $125.00
-                        </span>
-                      </td>
-                      <td className='px-40 py-32 border-end border-neutral-100'>
-                        <span className='text-lg h6 mb-0 fw-semibold'>
-                          In Stock
-                        </span>
-                      </td>
-                      <td className='px-40 py-32'>
-                        <Link
-                          to='/cart'
-                          className='btn btn-main-two rounded-8 px-64'
-                        >
-                          Add To Cart <i className='ph ph-shopping-cart' />
-                        </Link>
-                      </td>
-                    </tr>
-                    <tr className=''>
-                      <td className='px-40 py-32 border-end border-neutral-100'>
-                        <button
-                          type='button'
-                          className='remove-tr-btn flex-align gap-12 hover-text-danger-600'
-                        >
-                          <i className='ph ph-x-circle text-2xl d-flex' />
-                          Remove
-                        </button>
-                      </td>
-                      <td className='px-40 py-32 border-end border-neutral-100'>
-                        <div className='table-product d-flex align-items-center gap-24'>
-                          <Link
-                            to='/product-details-two'
-                            className='table-product__thumb border border-gray-100 rounded-8 flex-center '
-                          >
-                            <img
-                              src='assets/images/thumbs/product-two-img3.png'
-                              alt=''
-                            />
-                          </Link>
-                          <div className='table-product__content text-start'>
-                            <h6 className='title text-lg fw-semibold mb-8'>
-                              <Link
-                                to='/product-details'
-                                className='link text-line-2'
-                                tabIndex={0}
-                              >
-                                Smart Phone With Intel Celeron
-                              </Link>
-                            </h6>
-                            <div className='flex-align gap-16 mb-16'>
-                              <div className='flex-align gap-6'>
-                                <span className='text-md fw-medium text-warning-600 d-flex'>
-                                  <i className='ph-fill ph-star' />
-                                </span>
-                                <span className='text-md fw-semibold text-gray-900'>
-                                  4.8
-                                </span>
-                              </div>
-                              <span className='text-sm fw-medium text-gray-200'>
-                                |
-                              </span>
-                              <span className='text-neutral-600 text-sm'>
-                                128 Reviews
-                              </span>
-                            </div>
-                            <div className='flex-align gap-16'>
-                              <Link
-                                to='/cart'
-                                className='product-card__cart btn bg-gray-50 text-heading text-sm hover-bg-main-600 hover-text-white py-7 px-8 rounded-8 flex-center gap-8 fw-medium'
-                              >
-                                Camera
-                              </Link>
-                              <Link
-                                to='/cart'
-                                className='product-card__cart btn bg-gray-50 text-heading text-sm hover-bg-main-600 hover-text-white py-7 px-8 rounded-8 flex-center gap-8 fw-medium'
-                              >
-                                Videos
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td className='px-40 py-32 border-end border-neutral-100'>
-                        <span className='text-lg h6 mb-0 fw-semibold'>
-                          $125.00
-                        </span>
-                      </td>
-                      <td className='px-40 py-32 border-end border-neutral-100'>
-                        <span className='text-lg h6 mb-0 fw-semibold'>
-                          In Stock
-                        </span>
-                      </td>
-                      <td className='px-40 py-32'>
-                        <Link
-                          to='/cart'
-                          className='btn btn-main-two rounded-8 px-64'
-                        >
-                          Add To Cart <i className='ph ph-shopping-cart' />
-                        </Link>
-                      </td>
-                    </tr>
-                    <tr className=''>
-                      <td className='px-40 py-32 border-end border-neutral-100'>
-                        <button
-                          type='button'
-                          className='remove-tr-btn flex-align gap-12 hover-text-danger-600'
-                        >
-                          <i className='ph ph-x-circle text-2xl d-flex' />
-                          Remove
-                        </button>
-                      </td>
-                      <td className='px-40 py-32 border-end border-neutral-100'>
-                        <div className='table-product d-flex align-items-center gap-24'>
-                          <Link
-                            to='/product-details-two'
-                            className='table-product__thumb border border-gray-100 rounded-8 flex-center '
-                          >
-                            <img
-                              src='assets/images/thumbs/product-two-img14.png'
-                              alt=''
-                            />
-                          </Link>
-                          <div className='table-product__content text-start'>
-                            <h6 className='title text-lg fw-semibold mb-8'>
-                              <Link
-                                to='/product-details'
-                                className='link text-line-2'
-                                tabIndex={0}
-                              >
-                                HP Chromebook With Intel Celeron
-                              </Link>
-                            </h6>
-                            <div className='flex-align gap-16 mb-16'>
-                              <div className='flex-align gap-6'>
-                                <span className='text-md fw-medium text-warning-600 d-flex'>
-                                  <i className='ph-fill ph-star' />
-                                </span>
-                                <span className='text-md fw-semibold text-gray-900'>
-                                  4.8
-                                </span>
-                              </div>
-                              <span className='text-sm fw-medium text-gray-200'>
-                                |
-                              </span>
-                              <span className='text-neutral-600 text-sm'>
-                                128 Reviews
-                              </span>
-                            </div>
-                            <div className='flex-align gap-16'>
-                              <Link
-                                to='/cart'
-                                className='product-card__cart btn bg-gray-50 text-heading text-sm hover-bg-main-600 hover-text-white py-7 px-8 rounded-8 flex-center gap-8 fw-medium'
-                              >
-                                Camera
-                              </Link>
-                              <Link
-                                to='/cart'
-                                className='product-card__cart btn bg-gray-50 text-heading text-sm hover-bg-main-600 hover-text-white py-7 px-8 rounded-8 flex-center gap-8 fw-medium'
-                              >
-                                Videos
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td className='px-40 py-32 border-end border-neutral-100'>
-                        <span className='text-lg h6 mb-0 fw-semibold'>
-                          $125.00
-                        </span>
-                      </td>
-                      <td className='px-40 py-32 border-end border-neutral-100'>
-                        <span className='text-lg h6 mb-0 fw-semibold'>
-                          In Stock
-                        </span>
-                      </td>
-                      <td className='px-40 py-32'>
-                        <Link
-                          to='/cart'
-                          className='btn btn-main-two rounded-8 px-64'
-                        >
-                          Add To Cart <i className='ph ph-shopping-cart' />
-                        </Link>
-                      </td>
-                    </tr>
-                    <tr className=''>
-                      <td className='px-40 py-32 border-end border-neutral-100'>
-                        <button
-                          type='button'
-                          className='remove-tr-btn flex-align gap-12 hover-text-danger-600'
-                        >
-                          <i className='ph ph-x-circle text-2xl d-flex' />
-                          Remove
-                        </button>
-                      </td>
-                      <td className='px-40 py-32 border-end border-neutral-100'>
-                        <div className='table-product d-flex align-items-center gap-24'>
-                          <Link
-                            to='/product-details-two'
-                            className='table-product__thumb border border-gray-100 rounded-8 flex-center '
-                          >
-                            <img
-                              src='assets/images/thumbs/product-two-img2.png'
-                              alt=''
-                            />
-                          </Link>
-                          <div className='table-product__content text-start'>
-                            <h6 className='title text-lg fw-semibold mb-8'>
-                              <Link
-                                to='/product-details'
-                                className='link text-line-2'
-                                tabIndex={0}
-                              >
-                                Smart watch With Intel Celeron
-                              </Link>
-                            </h6>
-                            <div className='flex-align gap-16 mb-16'>
-                              <div className='flex-align gap-6'>
-                                <span className='text-md fw-medium text-warning-600 d-flex'>
-                                  <i className='ph-fill ph-star' />
-                                </span>
-                                <span className='text-md fw-semibold text-gray-900'>
-                                  4.8
-                                </span>
-                              </div>
-                              <span className='text-sm fw-medium text-gray-200'>
-                                |
-                              </span>
-                              <span className='text-neutral-600 text-sm'>
-                                128 Reviews
-                              </span>
-                            </div>
-                            <div className='flex-align gap-16'>
-                              <Link
-                                to='/cart'
-                                className='product-card__cart btn bg-gray-50 text-heading text-sm hover-bg-main-600 hover-text-white py-7 px-8 rounded-8 flex-center gap-8 fw-medium'
-                              >
-                                Camera
-                              </Link>
-                              <Link
-                                to='/cart'
-                                className='product-card__cart btn bg-gray-50 text-heading text-sm hover-bg-main-600 hover-text-white py-7 px-8 rounded-8 flex-center gap-8 fw-medium'
-                              >
-                                Videos
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td className='px-40 py-32 border-end border-neutral-100'>
-                        <span className='text-lg h6 mb-0 fw-semibold'>
-                          $125.00
-                        </span>
-                      </td>
-                      <td className='px-40 py-32 border-end border-neutral-100'>
-                        <span className='text-lg h6 mb-0 fw-semibold'>
-                          In Stock
-                        </span>
-                      </td>
-                      <td className='px-40 py-32'>
-                        <Link
-                          to='/cart'
-                          className='btn btn-main-two rounded-8 px-64'
-                        >
-                          Add To Cart <i className='ph ph-shopping-cart' />
-                        </Link>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                                    </motion.div>
+                                ))}
+                            </AnimatePresence>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </motion.section>
   );
 };
 

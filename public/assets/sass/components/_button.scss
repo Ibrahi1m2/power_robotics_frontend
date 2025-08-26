@@ -6,17 +6,19 @@
 }
 
 .btn {
-    position: relative;
-    border-radius: 5px;
-    border: 1px solid transparent;
-    font-weight: 500;
-    font-family: var(--body-font);
-    color: hsl(var(--white)) !important;
-    z-index: 1;
-    line-height: 1;
-    padding: 13px 24px;
-    &:hover, &:focus, &:focus-visible {
-        box-shadow: none !important;
+    font-family: "Inter", sans-serif;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    font-weight: 600;
+    color: #fff !important;
+    background-color: hsl(var(--main));
+    border: none;
+    padding: 13px 28px;
+    transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+    &:hover, &:focus {
+        background-color: hsl(var(--main-h), var(--main-s), 40%);
+        color: #fff !important;
+        box-shadow: var(--shadow-md);
     }
     @include xl-screen {
         padding: 10px 20px;         

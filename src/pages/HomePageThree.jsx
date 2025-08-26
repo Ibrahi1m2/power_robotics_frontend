@@ -10,8 +10,6 @@ import TextSlider from "../components/TextSlider";
 import TrendingThree from "../components/TrendingThree";
 import DiscountThree from "../components/DiscountThree";
 import NewArrivalThree from "../components/NewArrivalThree";
-import DealsSection from "../components/DealsSection";
-import PopularProductsThree from "../components/PopularProductsThree";
 import BrandThree from "../components/BrandThree";
 import ShippingThree from "../components/ShippingThree";
 import TestimonialOne from "../components/TestimonialOne";
@@ -54,12 +52,6 @@ const HomePageThree = () => {
 
       {/* NewArrivalThree */}
       <NewArrivalThree />
-
-      {/* DealsSection */}
-      <DealsSection />
-
-      {/* PopularProductsThree */}
-      <PopularProductsThree />
 
       {/* BrandThree */}
       <BrandThree />

@@ -18,13 +18,10 @@ const PromotionalOne = () => {
                                     Everyday Fresh Meat
                                 </h6>
                                 <Link
-                                    to="/shop"
-                                    className="btn btn-main d-inline-flex align-items-center rounded-pill gap-8 mt-24"
+                                    to="/contact"
+                                    className="btn btn-lg btn-main-600 text-white"
                                 >
                                     Shop Now
-                                    <span className="icon text-xl d-flex">
-                                        <i className="ph ph-arrow-right" />
-                                    </span>
                                 </Link>
                             </div>
                         </div>
@@ -41,13 +38,10 @@ const PromotionalOne = () => {
                                     Daily Fresh Vegetables
                                 </h6>
                                 <Link
-                                    to="/shop"
-                                    className="btn btn-main d-inline-flex align-items-center rounded-pill gap-8 mt-24"
+                                    to="/contact"
+                                    className="btn btn-lg btn-main-600 text-white"
                                 >
                                     Shop Now
-                                    <span className="icon text-xl d-flex">
-                                        <i className="ph ph-arrow-right" />
-                                    </span>
                                 </Link>
                             </div>
                         </div>
@@ -64,13 +58,10 @@ const PromotionalOne = () => {
                                     Everyday Fresh Milk
                                 </h6>
                                 <Link
-                                    to="/shop"
-                                    className="btn btn-main d-inline-flex align-items-center rounded-pill gap-8 mt-24"
+                                    to="/contact"
+                                    className="btn btn-lg btn-main-600 text-white"
                                 >
                                     Shop Now
-                                    <span className="icon text-xl d-flex">
-                                        <i className="ph ph-arrow-right" />
-                                    </span>
                                 </Link>
                             </div>
                         </div>
@@ -87,13 +78,10 @@ const PromotionalOne = () => {
                                     Everyday Fresh Fruits
                                 </h6>
                                 <Link
-                                    to="/shop"
-                                    className="btn btn-main d-inline-flex align-items-center rounded-pill gap-8 mt-24"
+                                    to="/contact"
+                                    className="btn btn-lg btn-main-600 text-white"
                                 >
                                     Shop Now
-                                    <span className="icon text-xl d-flex">
-                                        <i className="ph ph-arrow-right" />
-                                    </span>
                                 </Link>
                             </div>
                         </div>

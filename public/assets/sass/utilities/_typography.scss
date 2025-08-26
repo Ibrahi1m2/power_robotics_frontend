@@ -10,14 +10,15 @@ html {
 }
 
 body {
-  font-family: var(--body-font);
-  color: hsl(var(--body-color));
+  font-family: "Inter", sans-serif;
+  color: #222;
   word-break: break-word;
-  background-color: hsl(var(--white));
+  background-color: #F7F7F9;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
+  line-height: 1.7;
 }
 
 html, body {
@@ -40,11 +41,11 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 16px 0;
-  font-family: var(--heading-font);
-  color: hsl(var(--heading-color));
+  font-family: "Inter", sans-serif;
+  color: #181A1E;
   line-height: 1.2;
   font-weight: 700;
+  margin: 0 0 16px 0;
 }
 h1, .h1 {
   font-size: var(--heading-one);
@@ -83,12 +84,14 @@ h6 > a {
 
 a {
   display: inline-block;
-  transition: 0.2s linear;
+  transition: color 0.2s;
   text-decoration: none;
-  color: #0661e9;
+  color: #1A73E8;
+  font-weight: 500;
 }
 a:hover {
-  color: #1d72f2;
+  color: #1558b0;
+  text-decoration: underline;
 }
 img {
   max-width: 100%;

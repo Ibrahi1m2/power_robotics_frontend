@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Preloader from "../helper/Preloader";
 import HeaderTwo from "../components/HeaderTwo";
 import BannerTwo from "../components/BannerTwo";
@@ -21,12 +22,89 @@ import FooterTwo from "../components/FooterTwo";
 import BottomFooter from "../components/BottomFooter";
 import ColorInit from "../helper/ColorInit";
 import ScrollToTop from "react-scroll-to-top";
+import RecommendedOne from "../components/RecommendedOne";
 
 const HomePageTwo = () => {
+  const [search, setSearch] = useState("");
+  const [isLoaded, setIsLoaded] = useState(false);
 
+  useEffect(() => {
+    // Trigger animations after component mounts
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Animation variants for different sections
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const sectionVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 60,
+      scale: 0.95
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94],
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }
+    }
+  };
+
+  const bannerVariants = {
+    hidden: { 
+      opacity: 0, 
+      scale: 0.9,
+      y: 30
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 1.2,
+        ease: [0.25, 0.46, 0.45, 0.94],
+        type: "spring",
+        stiffness: 80,
+        damping: 20
+      }
+    }
+  };
+
+  const fadeInUpVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 40
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
 
   return (
-
     <>
       {/* ColorInit */}
       <ColorInit color={true} />
@@ -38,63 +116,87 @@ const HomePageTwo = () => {
       <Preloader />
 
       {/* HeaderTwo */}
-      <HeaderTwo category={false} />
+      <HeaderTwo category={false} search={search} setSearch={setSearch} />
 
-      {/* BannerTwo */}
-      <BannerTwo />
+      <AnimatePresence>
+        {isLoaded && (
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+          >
+            {/* BannerTwo */}
+            <motion.div variants={bannerVariants}>
+              <BannerTwo />
+            </motion.div>
 
-      {/* PromotionalTwo */}
-      <PromotionalTwo />
+            {/* PromotionalTwo */}
+            <motion.div variants={sectionVariants}>
+              <PromotionalTwo />
+            </motion.div>
 
-      {/* DealsOne */}
-      <DealsOne />
+            {/* DealsOne (Product Grid) */}
+            <motion.div 
+              variants={sectionVariants}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <DealsOne search={search} />
+            </motion.div>
 
-      {/* TopSellingOne */}
-      <TopSellingOne />
+            {/* TopSellingOne */}
+            <motion.div 
+              variants={sectionVariants}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <TopSellingOne />
+            </motion.div>
 
-      {/* TrendingOne */}
-      <TrendingOne />
+            {/* DaySaleOne */}
+            <motion.div 
+              variants={sectionVariants}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <DaySaleOne />
+            </motion.div>
 
-      {/* DiscountOne */}
-      <DiscountOne />
+            {/* ShippingTwo */}
+            <motion.div 
+              variants={fadeInUpVariants}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+            >
+              <ShippingTwo />
+            </motion.div>
 
-      {/* FeaturedOne */}
-      <FeaturedOne />
+            {/* NewsletterTwo */}
+            <motion.div 
+              variants={fadeInUpVariants}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+            >
+              <NewsletterTwo />
+            </motion.div>
 
-      {/* BigDealOne */}
-      <BigDealOne />
+            {/* FooterTwo */}
+            <motion.div 
+              variants={fadeInUpVariants}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <FooterTwo />
+            </motion.div>
 
-      {/* TopSellingTwo */}
-      <TopSellingTwo />
-
-      {/* PopularProductsOne */}
-      <PopularProductsOne />
-
-      {/* TopVendorsTwo */}
-      <TopVendorsTwo />
-
-      {/* DaySaleOne */}
-      <DaySaleOne />
-
-      {/* RecentlyViewedOne */}
-      <RecentlyViewedOne />
-
-      {/* BrandTwo */}
-      <BrandTwo />
-
-      {/* ShippingTwo */}
-      <ShippingTwo />
-
-      {/* NewsletterTwo */}
-      <NewsletterTwo />
-
-      {/* FooterTwo */}
-      <FooterTwo />
-
-      {/* BottomFooter */}
-      <BottomFooter />
-
-
+            {/* BottomFooter */}
+            <motion.div variants={fadeInUpVariants}>
+              <BottomFooter />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

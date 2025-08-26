@@ -95,7 +95,7 @@ const Contact = () => {
                                             type="submit"
                                             className="btn btn-main py-18 px-32 rounded-8"
                                         >
-                                            Get a Quote
+                                            Submit
                                         </button>
                                     </div>
                                 </div>
@@ -110,10 +110,10 @@ const Contact = () => {
                                     <i className="ph-fill ph-phone-call" />
                                 </span>
                                 <Link
-                                    to="/tel:+00123456789"
+                                    to="/tel:+919003779504"
                                     className="text-md text-gray-900 hover-text-main-600"
                                 >
-                                    +00 123 456 789
+                                    +91 9003779504
                                 </Link>
                             </div>
                             <div className="flex-align gap-16 mb-16">
@@ -121,10 +121,10 @@ const Contact = () => {
                                     <i className="ph-fill ph-envelope" />
                                 </span>
                                 <Link
-                                    to="/mailto:support24@marketpro.com"
+                                    to="/mailto:rashikf2007@gmail.com"
                                     className="text-md text-gray-900 hover-text-main-600"
                                 >
-                                    support24@marketpro.com
+                                    rashikf2007@gmail.com
                                 </Link>
                             </div>
                             <div className="flex-align gap-16 mb-0">
@@ -132,7 +132,7 @@ const Contact = () => {
                                     <i className="ph-fill ph-map-pin" />
                                 </span>
                                 <span className="text-md text-gray-900 ">
-                                    789 Inner Lane, California, USA
+                                    18/B, inji colony, Eruvadi
                                 </span>
                             </div>
                         </div>

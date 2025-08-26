@@ -119,7 +119,7 @@ const BannerThree = () => {
                       help you.
                     </p>
                     <Link
-                      to='/shop'
+                      to='/contact'
                       className='btn btn-outline-white d-inline-flex align-items-center rounded-pill gap-8 mt-lg-4 mt-sm-1 wow bounceIn'
                       tabIndex={0}
                     >
@@ -172,7 +172,7 @@ const BannerThree = () => {
                       help you.
                     </p>
                     <Link
-                      to='/shop'
+                      to='/contact'
                       className='btn btn-outline-white d-inline-flex align-items-center rounded-pill gap-8 mt-48 wow bounceIn'
                       tabIndex={0}
                     >
@@ -226,7 +226,7 @@ const BannerThree = () => {
                       help you.
                     </p>
                     <Link
-                      to='/shop'
+                      to='/contact'
                       className='btn btn-outline-white d-inline-flex align-items-center rounded-pill gap-8 mt-48 wow bounceIn'
                       tabIndex={0}
                     >

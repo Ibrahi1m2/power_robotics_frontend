@@ -2,8 +2,8 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 const TextSlider = () => {
   return (
-    <div className='text-slider-section overflow-hidden bg-neutral-600 py-28'>
-      <div className='text-slider d-flex align-items-center gap-4'>
+    <div className='text-slider-section overflow-hidden bg-neutral-600' style={{ width: '100vw', maxWidth: '100vw', height: '260px', minHeight: '260px', marginLeft: '50%', transform: 'translateX(-50%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div className='text-slider d-flex align-items-center gap-4 justify-content-center' style={{ width: '100vw', maxWidth: '100vw', height: '260px', minHeight: '260px', alignItems: 'center' }}>
         <Marquee
           speed={150}
           pauseOnHover={true}
@@ -13,50 +13,50 @@ const TextSlider = () => {
             <span className='flex-shrink-0'>
               <img src='assets/images/icon/star-color.png' alt='' />
             </span>
-            <h4 className='text-white flex-grow-1 mb-0 fw-medium'>
+            <h2 className='text-white flex-grow-1 mb-0 fw-bold' style={{ fontSize: '2.2rem', lineHeight: 1.2 }}>
               T-Shirt Offer
-            </h4>
+            </h2>
           </div>
           <div className='d-flex flex-nowrap flex-shrink-0 flx-align gap-32'>
             <span className='flex-shrink-0'>
               <img src='assets/images/icon/star-color.png' alt='' />
             </span>
-            <h4 className='text-white flex-grow-1 mb-0 fw-medium'>
+            <h2 className='text-white flex-grow-1 mb-0 fw-bold' style={{ fontSize: '2.2rem', lineHeight: 1.2 }}>
               Best Selling Offer
-            </h4>
+            </h2>
           </div>
           <div className='d-flex flex-nowrap flex-shrink-0 flx-align gap-32'>
             <span className='flex-shrink-0'>
               <img src='assets/images/icon/star-color.png' alt='' />
             </span>
-            <h4 className='text-white flex-grow-1 mb-0 fw-medium'>
+            <h2 className='text-white flex-grow-1 mb-0 fw-bold' style={{ fontSize: '2.2rem', lineHeight: 1.2 }}>
               Limited Offer Sales
-            </h4>
+            </h2>
           </div>
           <div className='d-flex flex-nowrap flex-shrink-0 flx-align gap-32'>
             <span className='flex-shrink-0'>
               <img src='assets/images/icon/star-color.png' alt='' />
             </span>
-            <h4 className='text-white flex-grow-1 mb-0 fw-medium'>
+            <h2 className='text-white flex-grow-1 mb-0 fw-bold' style={{ fontSize: '2.2rem', lineHeight: 1.2 }}>
               Spring Collection
-            </h4>
+            </h2>
           </div>
           <div className='d-flex flex-nowrap flex-shrink-0 flx-align gap-32'>
             <span className='flex-shrink-0'>
               <img src='assets/images/icon/star-color.png' alt='' />
             </span>
-            <h4 className='text-white flex-grow-1 mb-0 fw-medium'>
+            <h2 className='text-white flex-grow-1 mb-0 fw-bold' style={{ fontSize: '2.2rem', lineHeight: 1.2 }}>
               Hot Deal Products
-            </h4>
+            </h2>
           </div>
           <div className='d-flex flex-nowrap flex-shrink-0 flx-align gap-32'>
             <span className='flex-shrink-0'>
               <img src='assets/images/icon/star-color.png' alt='' />
             </span>
-            <h4 className='text-white flex-grow-1 mb-0 fw-medium'>
+            <h2 className='text-white flex-grow-1 mb-0 fw-bold' style={{ fontSize: '2.2rem', lineHeight: 1.2 }}>
               {" "}
               Our Services
-            </h4>
+            </h2>
           </div>
         </Marquee>
       </div>

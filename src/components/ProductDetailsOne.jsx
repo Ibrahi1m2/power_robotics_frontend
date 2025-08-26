@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import { getCountdown } from '../helper/Countdown';
+import { useCartWithModal } from '../hooks/useCartWithModal';
 
 const ProductDetailsOne = () => {
     const [timeLeft, setTimeLeft] = useState(getCountdown());
+    const { addToCart } = useCartWithModal();
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -13,6 +15,22 @@ const ProductDetailsOne = () => {
 
         return () => clearInterval(interval);
     }, []);
+
+    const product = {
+        id: 1,
+        name: "Lay's Potato Chips Onion Flavored",
+        price: 25.00,
+        originalPrice: 38.00,
+        image: "assets/images/thumbs/product-details-thumb1.png",
+        rating: 4.7,
+        reviews: "21,671",
+        store: "Lucky Supermarket"
+    };
+
+    const handleAddToCart = () => {
+        addToCart(product);
+    };
+
     const productImages = [
         "assets/images/thumbs/product-details-thumb1.png",
         "assets/images/thumbs/product-details-thumb2.png",
@@ -24,7 +42,6 @@ const ProductDetailsOne = () => {
     const [quantity, setQuantity] = useState(1);
     const incrementQuantity = () => setQuantity(quantity + 1);
     const decrementQuantity = () => setQuantity(quantity > 1 ? quantity - 1 : quantity);
-
 
     const [mainImage, setMainImage] = useState(productImages[0]);
 
@@ -60,16 +77,13 @@ const ProductDetailsOne = () => {
                                                     </div>
                                                 ))}
                                             </Slider>
-
-
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-xl-6">
                                 <div className="product-details__content">
-                                    <h5 className="mb-12">Lay's Potato Chips Onion Flavored</h5>
+                                    <h5 className="mb-12">{product.name}</h5>
                                     <div className="flex-align flex-wrap gap-12">
                                         <div className="flex-align gap-12 flex-wrap">
                                             <div className="flex-align gap-8">
@@ -90,10 +104,10 @@ const ProductDetailsOne = () => {
                                                 </span>
                                             </div>
                                             <span className="text-sm fw-medium text-neutral-600">
-                                                4.7 Star Rating
+                                                {product.rating} Star Rating
                                             </span>
                                             <span className="text-sm fw-medium text-gray-500">
-                                                (21,671)
+                                                ({product.reviews})
                                             </span>
                                         </div>
                                         <span className="text-sm fw-medium text-gray-500">|</span>
@@ -110,8 +124,8 @@ const ProductDetailsOne = () => {
                                     </p>
                                     <div className="mt-32 flex-align flex-wrap gap-32">
                                         <div className="flex-align gap-8">
-                                            <h4 className="mb-0">$25.00</h4>
-                                            <span className="text-md text-gray-500">$38.00</span>
+                                            <h4 className="mb-0">${product.price.toFixed(2)}</h4>
+                                            <span className="text-md text-gray-500">${product.originalPrice.toFixed(2)}</span>
                                         </div>
                                         <Link to="#" className="btn btn-main rounded-pill">
                                             Order on What'sApp
@@ -190,13 +204,12 @@ const ProductDetailsOne = () => {
                                                     <i className="ph ph-plus" />
                                                 </button>
                                             </div>
-                                            <Link
-                                                to="#"
+                                            <button
+                                                onClick={handleAddToCart}
                                                 className="btn btn-main rounded-pill flex-align d-inline-flex gap-8 px-48"
                                             >
-                                                {" "}
                                                 <i className="ph ph-shopping-cart" /> Add To Cart
-                                            </Link>
+                                            </button>
                                         </div>
                                         <div className="flex-align gap-12">
                                             <Link
@@ -990,7 +1003,6 @@ const ProductDetailsOne = () => {
                 </div>
             </div>
         </section>
-
     )
 }
 

@@ -137,7 +137,7 @@ const NewArrivalThree = () => {
                         </span>
                         <h5 className='mb-0'>Get 85% Off</h5>
                         <Link
-                          to='/shop'
+                          to='/contact'
                           className='btn btn-black rounded-pill gap-8 mt-32 flex-align d-inline-flex'
                           tabIndex={0}
                         >
@@ -832,7 +832,7 @@ const NewArrivalThree = () => {
                             Spring Collection
                           </h5>
                           <Link
-                            to='/shop'
+                            to='/contact'
                             className='btn btn-black rounded-pill gap-8 mt-32 flex-align d-inline-flex'
                             tabIndex={0}
                           >
@@ -879,7 +879,7 @@ const NewArrivalThree = () => {
                           Summer offer
                         </span>
                         <h5 className='mb-0'>Get 85% Off</h5>
-                        <Link to='/shop'
+                        <Link to='/contact'
                           className='btn btn-black rounded-pill gap-8 mt-32 flex-align d-inline-flex'
                           tabIndex={0}
                         >
@@ -1574,7 +1574,7 @@ const NewArrivalThree = () => {
                             Spring Collection
                           </h5>
                           <Link
-                            to='/shop'
+                            to='/contact'
                             className='btn btn-black rounded-pill gap-8 mt-32 flex-align d-inline-flex'
                             tabIndex={0}
                           >
@@ -1621,7 +1621,7 @@ const NewArrivalThree = () => {
                           Summer offer
                         </span>
                         <h5 className='mb-0'>Get 85% Off</h5>
-                        <Link to='/shop'
+                        <Link to='/contact'
                           className='btn btn-black rounded-pill gap-8 mt-32 flex-align d-inline-flex'
                           tabIndex={0}
                         >
@@ -2316,7 +2316,7 @@ const NewArrivalThree = () => {
                             Spring Collection
                           </h5>
                           <Link
-                            to='/shop'
+                            to='/contact'
                             className='btn btn-black rounded-pill gap-8 mt-32 flex-align d-inline-flex'
                             tabIndex={0}
                           >
@@ -2363,7 +2363,7 @@ const NewArrivalThree = () => {
                           Summer offer
                         </span>
                         <h5 className='mb-0'>Get 85% Off</h5>
-                        <Link to='/shop'
+                        <Link to='/contact'
                           className='btn btn-black rounded-pill gap-8 mt-32 flex-align d-inline-flex'
                           tabIndex={0}
                         >
@@ -3058,7 +3058,7 @@ const NewArrivalThree = () => {
                             Spring Collection
                           </h5>
                           <Link
-                            to='/shop'
+                            to='/contact'
                             className='btn btn-black rounded-pill gap-8 mt-32 flex-align d-inline-flex'
                             tabIndex={0}
                           >
@@ -3105,7 +3105,7 @@ const NewArrivalThree = () => {
                           Summer offer
                         </span>
                         <h5 className='mb-0'>Get 85% Off</h5>
-                        <Link to='/shop'
+                        <Link to='/contact'
                           className='btn btn-black rounded-pill gap-8 mt-32 flex-align d-inline-flex'
                           tabIndex={0}
                         >
@@ -3800,7 +3800,7 @@ const NewArrivalThree = () => {
                             Spring Collection
                           </h5>
                           <Link
-                            to='/shop'
+                            to='/contact'
                             className='btn btn-black rounded-pill gap-8 mt-32 flex-align d-inline-flex'
                             tabIndex={0}
                           >
@@ -3847,7 +3847,7 @@ const NewArrivalThree = () => {
                           Summer offer
                         </span>
                         <h5 className='mb-0'>Get 85% Off</h5>
-                        <Link to='/shop'
+                        <Link to='/contact'
                           className='btn btn-black rounded-pill gap-8 mt-32 flex-align d-inline-flex'
                           tabIndex={0}
                         >
@@ -4542,7 +4542,7 @@ const NewArrivalThree = () => {
                             Spring Collection
                           </h5>
                           <Link
-                            to='/shop'
+                            to='/contact'
                             className='btn btn-black rounded-pill gap-8 mt-32 flex-align d-inline-flex'
                             tabIndex={0}
                           >
@@ -4589,7 +4589,7 @@ const NewArrivalThree = () => {
                           Summer offer
                         </span>
                         <h5 className='mb-0'>Get 85% Off</h5>
-                        <Link to='/shop'
+                        <Link to='/contact'
                           className='btn btn-black rounded-pill gap-8 mt-32 flex-align d-inline-flex'
                           tabIndex={0}
                         >
@@ -5284,7 +5284,7 @@ const NewArrivalThree = () => {
                             Spring Collection
                           </h5>
                           <Link
-                            to='/shop'
+                            to='/contact'
                             className='btn btn-black rounded-pill gap-8 mt-32 flex-align d-inline-flex'
                             tabIndex={0}
                           >
