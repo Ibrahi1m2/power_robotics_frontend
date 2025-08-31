@@ -28,7 +28,7 @@ const ProductListOne = () => {
                 const controller = new AbortController();
                 const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
                 
-                const response = await fetch('http://localhost:5000/api/products', {
+                const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/products`, {
                     signal: controller.signal
                 });
                 

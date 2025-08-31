@@ -11,7 +11,7 @@ const AdminOrderView = () => {
         const fetchOrder = async () => {
             try {
                 setLoading(true);
-                const response = await fetch(`http://localhost:5000/api/cart-image/admin/order/${uniqueId}`);
+                const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/cart-image/admin/order/${uniqueId}`);
                 
                 if (!response.ok) {
                     throw new Error('Order not found');

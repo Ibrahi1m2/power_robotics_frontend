@@ -343,7 +343,7 @@ const Checkout = () => {
 
 
             // Send to new endpoint
-            const response = await fetch('http://localhost:5000/api/cart-image/upload-and-create-order', {
+            const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/cart-image/upload-and-create-order`, {
                 method: 'POST',
                 body: formData
             });

@@ -37,7 +37,7 @@ const DealsOne = ({ search = "" }) => {
                 
                 // Try multiple API endpoints
                 const endpoints = [
-                    "http://localhost:5000/api/products",
+                    `${process.env.REACT_APP_API_BASE_URL}/api/products`,
                     "/api/products",
                     "/api/deal-of-the-week"
                 ];

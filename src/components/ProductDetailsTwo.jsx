@@ -30,7 +30,7 @@ const ProductDetailsTwo = ({ productId }) => {
 
   useEffect(() => {
     console.log('ProductDetailsTwo: Fetching product with ID:', productId);
-    fetch(`http://localhost:5000/api/products/${productId}`)
+    const response = fetch(`${process.env.REACT_APP_API_BASE_URL}/api/products/${productId}`)
       .then(res => {
         console.log('ProductDetailsTwo: Response status:', res.status);
         if (!res.ok) throw new Error("Failed to fetch product");

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { User, Lock, Eye, EyeSlash, EnvelopeSimple, UserPlus, SignIn, Shield } from '@phosphor-icons/react'
 
-const API_BASE = 'http://localhost:5000/api/auth';
+const API_BASE = `${process.env.REACT_APP_API_BASE_URL}/api/auth`;
 
 const Account = () => {
     const [loginData, setLoginData] = useState({ username: '', password: '' });
