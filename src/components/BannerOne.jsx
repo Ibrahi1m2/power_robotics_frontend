@@ -80,7 +80,7 @@ const BannerOne = () => {
                                             animate={{ opacity: 1, y: 0 }}
                                             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                                         >
-                                            Discover the Future of Shopping
+                                            Discovery the Future of Shopping
                                         </motion.h1>
                                         <motion.p 
                                             className="banner-item__subtitle"

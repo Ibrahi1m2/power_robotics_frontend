@@ -134,45 +134,231 @@ const HeaderTwo = ({ category, search, setSearch }) => {
       </div>
       {/* ==================== Mobile Menu End Here ==================== */}
       {/* ======================= Middle Header Two Start ========================= */}
-      <header className="header-two-modern" style={{ width: '100%', background: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(8px)', boxShadow: '0 2px 16px rgba(60,60,120,0.08)', position: 'sticky', top: 0, zIndex: 100, padding: '0 0', borderBottom: '1px solid #e5e7eb' }}>
-        <div style={{ maxWidth: 1400, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 88, gap: 32 }}>
+      <header className="header-two-modern" style={{ width: '100%', background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(8px)', boxShadow: '0 2px 16px rgba(60,60,120,0.08)', position: 'sticky', top: 0, zIndex: 100, padding: '0 16px', borderBottom: '1px solid #e5e7eb' }}>
+        <div style={{ width: '100%', maxWidth: 1400, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '100%', minHeight: '64px', gap: '16px', padding: '8px 0' }}>
           {/* Logo */}
           <div style={{ flex: '0 0 auto', display: 'flex', alignItems: 'center', height: '100%' }}>
-            <a href="/" style={{ display: 'flex', alignItems: 'center', height: 72 }}>
-              <img src="/assets/images/logo/robo-logo.png" alt="Robot Logo" style={{ height: 80, width: 'auto', objectFit: 'contain', marginRight: 12, padding: 12, background: '#fff', borderRadius: 20 }} />
+            <a href="/" style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+              <img 
+                src="/assets/images/logo/robo-logo.png" 
+                alt="Robot Logo" 
+                style={{ 
+                  height: '48px', 
+                  width: 'auto', 
+                  objectFit: 'contain', 
+                  padding: '8px', 
+                  background: '#fff', 
+                  borderRadius: '12px',
+                  maxWidth: '120px'
+                }} 
+              />
             </a>
           </div>
-          {/* Search Bar */}
-          <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <form onSubmit={handleSearchSubmit} style={{ width: '100%', maxWidth: 420, background: 'rgba(243,244,246,0.95)', borderRadius: 32, boxShadow: '0 2px 8px rgba(60,60,120,0.04)', display: 'flex', alignItems: 'center', padding: '0 18px', height: 48, border: '1px solid #e5e7eb' }}>
+          {/* Search Bar - Hidden on mobile */}
+          <div style={{ 
+            flex: 1, 
+            display: 'none', 
+            justifyContent: 'center', 
+            alignItems: 'center',
+            '@media (min-width: 768px)': {
+              display: 'flex'
+            }
+          }}>
+            <form 
+              onSubmit={handleSearchSubmit} 
+              style={{ 
+                width: '100%', 
+                maxWidth: '420px', 
+                background: 'rgba(243,244,246,0.95)', 
+                borderRadius: '32px', 
+                boxShadow: '0 2px 8px rgba(60,60,120,0.04)', 
+                display: 'flex', 
+                alignItems: 'center', 
+                padding: '0 18px', 
+                height: '40px', 
+                border: '1px solid #e5e7eb' 
+              }}
+            >
               <input
                 type="text"
                 placeholder="Search products..."
                 value={search}
                 onChange={e => setSearch(e.target.value)}
-                style={{ flex: 1, border: 'none', outline: 'none', background: 'transparent', fontSize: 18, color: '#222', padding: '0 8px' }}
+                style={{ 
+                  flex: 1, 
+                  border: 'none', 
+                  outline: 'none', 
+                  background: 'transparent', 
+                  fontSize: '14px', 
+                  color: '#222', 
+                  padding: '0 8px' 
+                }}
               />
-              <button type="submit" style={{ background: 'none', border: 'none', outline: 'none', cursor: 'pointer', color: '#6366f1', fontSize: 22, marginLeft: 8 }}>
+              <button 
+                type="submit" 
+                style={{ 
+                  background: 'none', 
+                  border: 'none', 
+                  outline: 'none', 
+                  cursor: 'pointer', 
+                  color: '#6366f1', 
+                  fontSize: '20px', 
+                  marginLeft: '4px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '32px',
+                  height: '32px'
+                }}
+              >
                 <i className="ph ph-magnifying-glass" />
               </button>
             </form>
-            </div>
+          </div>
+          
           {/* Icons */}
-          <div style={{ flex: '0 0 auto', display: 'flex', alignItems: 'center', gap: 24 }}>
-            {/* Example icons: wishlist, cart, account */}
-            <a href="/wishlist" style={{ color: '#6366f1', fontSize: 28, padding: 8, borderRadius: 12, transition: 'background 0.18s', position: 'relative' }} onMouseOver={e => e.currentTarget.style.background = '#f3f4f6'} onMouseOut={e => e.currentTarget.style.background = 'transparent'}>
+          <div style={{ 
+            flex: '0 0 auto', 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: '12px',
+            '@media (min-width: 768px)': {
+              gap: '24px'
+            }
+          }}>
+            {/* Mobile Search Toggle */}
+            <button 
+              onClick={handleSearchToggle}
+              style={{ 
+                color: '#6366f1', 
+                fontSize: '24px', 
+                padding: '8px', 
+                borderRadius: '12px', 
+                transition: 'background 0.2s',
+                background: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                '@media (min-width: 768px)': {
+                  display: 'none'
+                }
+              }}
+              onMouseOver={e => e.currentTarget.style.background = '#f3f4f6'}
+              onMouseOut={e => e.currentTarget.style.background = 'transparent'}
+            >
+              <i className="ph ph-magnifying-glass" />
+            </button>
+            
+            {/* Wishlist */}
+            <a 
+              href="/wishlist" 
+              style={{ 
+                color: '#6366f1', 
+                fontSize: '24px', 
+                padding: '8px', 
+                borderRadius: '12px', 
+                transition: 'background 0.2s',
+                position: 'relative',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '40px',
+                height: '40px'
+              }} 
+              onMouseOver={e => e.currentTarget.style.background = '#f3f4f6'}
+              onMouseOut={e => e.currentTarget.style.background = 'transparent'}
+            >
               <i className="ph ph-heart" />
               {wishlistCount > 0 && (
-                <span style={{ position: 'absolute', top: 2, right: 2, background: '#ef4444', color: '#fff', borderRadius: '50%', minWidth: 20, height: 20, fontSize: 13, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, padding: '0 6px', boxShadow: '0 2px 8px rgba(60,60,120,0.10)' }}>{wishlistCount}</span>
+                <span style={{ 
+                  position: 'absolute', 
+                  top: '2px', 
+                  right: '2px', 
+                  background: '#ef4444', 
+                  color: '#fff', 
+                  borderRadius: '50%', 
+                  minWidth: '18px', 
+                  height: '18px', 
+                  fontSize: '11px', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center', 
+                  fontWeight: 700, 
+                  padding: '0 4px', 
+                  boxShadow: '0 2px 8px rgba(60,60,120,0.10)' 
+                }}>
+                  {wishlistCount > 9 ? '9+' : wishlistCount}
+                </span>
               )}
             </a>
-            <a href="/cart" style={{ color: '#6366f1', fontSize: 28, padding: 8, borderRadius: 12, transition: 'background 0.18s', position: 'relative' }} onMouseOver={e => e.currentTarget.style.background = '#f3f4f6'} onMouseOut={e => e.currentTarget.style.background = 'transparent'}>
+            
+            {/* Cart */}
+            <a 
+              href="/cart" 
+              style={{ 
+                color: '#6366f1', 
+                fontSize: '24px', 
+                padding: '8px', 
+                borderRadius: '12px', 
+                transition: 'background 0.2s', 
+                position: 'relative',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '40px',
+                height: '40px'
+              }} 
+              onMouseOver={e => e.currentTarget.style.background = '#f3f4f6'}
+              onMouseOut={e => e.currentTarget.style.background = 'transparent'}
+            >
               <i className="ph ph-shopping-cart" />
               {cartCount > 0 && (
-                <span style={{ position: 'absolute', top: 2, right: 2, background: '#6366f1', color: '#fff', borderRadius: '50%', minWidth: 20, height: 20, fontSize: 13, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, padding: '0 6px', boxShadow: '0 2px 8px rgba(60,60,120,0.10)' }}>{cartCount}</span>
+                <span style={{ 
+                  position: 'absolute', 
+                  top: '2px', 
+                  right: '2px', 
+                  background: '#6366f1', 
+                  color: '#fff', 
+                  borderRadius: '50%', 
+                  minWidth: '18px', 
+                  height: '18px', 
+                  fontSize: '11px', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center', 
+                  fontWeight: 700, 
+                  padding: '0 4px', 
+                  boxShadow: '0 2px 8px rgba(60,60,120,0.10)' 
+                }}>
+                  {cartCount > 9 ? '9+' : cartCount}
+                </span>
               )}
             </a>
-            <a href="/account" style={{ color: '#6366f1', fontSize: 28, padding: 8, borderRadius: 12, transition: 'background 0.18s' }} onMouseOver={e => e.currentTarget.style.background = '#f3f4f6'} onMouseOut={e => e.currentTarget.style.background = 'transparent'}>
+            
+            {/* Account */}
+            <a 
+              href="/account" 
+              style={{ 
+                color: '#6366f1', 
+                fontSize: '24px', 
+                padding: '8px', 
+                borderRadius: '12px', 
+                transition: 'background 0.2s',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '40px',
+                height: '40px',
+                marginRight: '-8px',
+                '@media (min-width: 768px)': {
+                  marginRight: '0'
+                }
+              }} 
+              onMouseOver={e => e.currentTarget.style.background = '#f3f4f6'}
+              onMouseOut={e => e.currentTarget.style.background = 'transparent'}
+            >
               <i className="ph ph-user" />
             </a>
           </div>

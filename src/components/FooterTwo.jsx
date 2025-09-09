@@ -10,7 +10,7 @@ const FooterTwo = () => {
                     <span style={{ fontWeight: 900, fontSize: 28, color: '#181A1E', letterSpacing: '-1px' }}>Power Robotics</span>
                         </div>
                 <div style={{ color: '#888', fontSize: 18, marginBottom: 16, textAlign: 'center', maxWidth: 600 }}>
-                    Power Robotics © 2024. All Rights Reserved
+                    Power Robotics © {new Date().getFullYear()}. All Rights Reserved
                         </div>
                 <div style={{ display: 'flex', gap: 24, marginBottom: 24 }}>
                     <a href="#" style={{ color: '#6366f1', fontSize: 28, padding: 8, borderRadius: 12, transition: 'background 0.18s' }} onMouseOver={e => e.currentTarget.style.background = '#e0e7ff'} onMouseOut={e => e.currentTarget.style.background = 'transparent'}>
