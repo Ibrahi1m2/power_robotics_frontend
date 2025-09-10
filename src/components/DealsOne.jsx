@@ -22,6 +22,12 @@ const DealsOne = ({ search = "" }) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [pagination, setPagination] = useState({
+        currentPage: 1,
+        totalPages: 1,
+        totalItems: 0,
+        itemsPerPage: 20
+    });
     const { addToWishlist, removeFromWishlist, wishlistItems, addToCart } = useCartWithModal();
     const navigate = useNavigate();
 
@@ -35,21 +41,43 @@ const DealsOne = ({ search = "" }) => {
                 setLoading(true);
                 setError(null);
                 
-                // Try multiple API endpoints
+                const page = pagination.currentPage;
+                const limit = pagination.itemsPerPage;
+                
+                // Try multiple API endpoints with pagination
                 const endpoints = [
-                    `${process.env.REACT_APP_API_BASE_URL}/api/products`,
-                    "/api/products",
-                    "/api/deal-of-the-week"
+                    `${process.env.REACT_APP_API_BASE_URL}/api/products?page=${page}&limit=${limit}`,
+                    `/api/products?page=${page}&limit=${limit}`,
+                    "/api/deal-of-the-week" // Keep as fallback without pagination
                 ];
                 
                 let data = null;
                 let lastError = null;
+                let paginationData = null;
                 
                 for (const endpoint of endpoints) {
                     try {
                         const response = await fetch(endpoint);
                         if (response.ok) {
-                            data = await response.json();
+                            const result = await response.json();
+                            // Check if response has pagination data (new API format)
+                            if (result.data && result.pagination) {
+                                data = result.data;
+                                paginationData = result.pagination;
+                            } else {
+                                // Fallback for non-paginated endpoints
+                                data = Array.isArray(result) ? result : [];
+                                // If we got data but no pagination, assume it's the deal-of-the-week endpoint
+                                if (data.length > 0 && endpoint.includes('deal-of-the-week')) {
+                                    // For deal of the week, we'll show all items without pagination
+                                    setPagination(prev => ({
+                                        ...prev,
+                                        currentPage: 1,
+                                        totalPages: 1,
+                                        totalItems: data.length
+                                    }));
+                                }
+                            }
                             break;
                         }
                     } catch (err) {
@@ -58,12 +86,27 @@ const DealsOne = ({ search = "" }) => {
                     }
                 }
                 
-                if (data && Array.isArray(data) && data.length > 0) {
+                if (data && Array.isArray(data)) {
                     setProducts(data);
+                    
+                    // Update pagination if we got pagination data
+                    if (paginationData) {
+                        setPagination(prev => ({
+                            ...prev,
+                            totalPages: paginationData.totalPages,
+                            totalItems: paginationData.total,
+                            currentPage: paginationData.page
+                        }));
+                    }
                 } else {
                     // Use fallback data when API is not available
                     console.warn('API not available, using fallback products');
                     setProducts(fallbackProducts);
+                    setPagination(prev => ({
+                        ...prev,
+                        totalPages: Math.ceil(fallbackProducts.length / prev.itemsPerPage),
+                        totalItems: fallbackProducts.length
+                    }));
                 }
                 
                 setLoading(false);
@@ -75,7 +118,140 @@ const DealsOne = ({ search = "" }) => {
         };
         
         fetchProducts();
-    }, []);
+    }, [pagination.currentPage]);
+    
+    // Handle page change
+    const handlePageChange = (newPage) => {
+        if (newPage >= 1 && newPage <= pagination.totalPages) {
+            setPagination(prev => ({
+                ...prev,
+                currentPage: newPage
+            }));
+            // Scroll to top when changing pages
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
+    
+    // Pagination component
+    const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+        // Show at most 5 page numbers at a time
+        const getPageNumbers = () => {
+            // If there's only one page, just return [1]
+            if (totalPages === 1) return [1];
+            
+            const pages = [];
+            const maxVisiblePages = 5;
+            let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+            let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+            
+            if (endPage - startPage + 1 < maxVisiblePages) {
+                startPage = Math.max(1, endPage - maxVisiblePages + 1);
+            }
+            
+            // Always show first page if not already included
+            if (startPage > 1) {
+                pages.push(1);
+                if (startPage > 2) {
+                    pages.push('...');
+                }
+            }
+            
+            // Add middle pages
+            for (let i = startPage; i <= endPage; i++) {
+                pages.push(i);
+            }
+            
+            // Always show last page if not already included
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    pages.push('...');
+                }
+                pages.push(totalPages);
+            }
+            
+            return pages;
+        };
+        
+        // Always show pagination controls, even for a single page
+        
+        const buttonStyle = {
+            borderColor: 'rgb(96, 165, 250)',
+            color: 'rgb(96, 165, 250)',
+            marginRight: '8px',
+            marginBottom: '8px',
+            padding: '6px 12px',
+            borderRadius: '4px',
+            border: '1px solid',
+            background: 'white',
+            cursor: 'pointer',
+            transition: 'all 0.2s ease-in-out'
+        };
+        
+        const activeButtonStyle = {
+            ...buttonStyle,
+            background: 'rgb(96, 165, 250)',
+            color: 'white',
+            borderColor: 'rgb(96, 165, 250)'
+        };
+        
+        const disabledButtonStyle = {
+            ...buttonStyle,
+            opacity: 0.5,
+            cursor: 'not-allowed'
+        };
+
+        return (
+            <div className="d-flex justify-content-center mt-4 flex-wrap" style={{ alignItems: 'center' }}>
+                <button 
+                    style={currentPage === 1 ? { ...buttonStyle, ...disabledButtonStyle } : buttonStyle}
+                    onClick={() => onPageChange(1)}
+                    disabled={currentPage === 1}
+                >
+                    «
+                </button>
+                <button 
+                    style={currentPage === 1 ? { ...buttonStyle, ...disabledButtonStyle } : buttonStyle}
+                    onClick={() => onPageChange(currentPage - 1)}
+                    disabled={currentPage === 1}
+                >
+                    ‹
+                </button>
+                
+                {getPageNumbers().map((page, index) => (
+                    page === '...' ? (
+                        <span key={`ellipsis-${index}`} style={{ padding: '0 8px', margin: '0 4px' }}>...</span>
+                    ) : (
+                        <button
+                            key={page}
+                            style={currentPage === page ? activeButtonStyle : buttonStyle}
+                            onClick={() => onPageChange(page)}
+                        >
+                            {page}
+                        </button>
+                    )
+                ))}
+                
+                <button 
+                    style={currentPage === totalPages ? { ...buttonStyle, ...disabledButtonStyle } : buttonStyle}
+                    onClick={() => onPageChange(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                >
+                    ›
+                </button>
+                <button 
+                    style={currentPage === totalPages ? { ...buttonStyle, ...disabledButtonStyle } : buttonStyle}
+                    onClick={() => onPageChange(totalPages)}
+                    disabled={currentPage === totalPages}
+                >
+                    »
+                </button>
+                
+                <div style={{ marginLeft: '16px', color: '#6c757d', fontSize: '0.9rem' }}>
+                    Page {currentPage} of {totalPages}
+                </div>
+            </div>
+        );
+    };
 
     const handleWishlistToggle = (product, e) => {
         e.preventDefault();
@@ -121,8 +297,11 @@ const DealsOne = ({ search = "" }) => {
     const topSelling = useMemo(() => [...products].sort((a, b) => b.sales - a.sales).slice(0, 4), [products]);
 
     const filteredProducts = products.filter(product =>
-        product.name && product.name.toLowerCase().includes(search.toLowerCase())
+        product && product.name && product.name.toLowerCase().includes(search.toLowerCase())
     );
+    
+    // If no search results, show a message
+    const noResults = search && filteredProducts.length === 0;
 
     const ProductList = ({ products, wishlistItems, handleWishlistToggle, handleAddToCart, handleBuyNow }) => {
       if (!products || products.length === 0) return null;
@@ -209,9 +388,10 @@ const DealsOne = ({ search = "" }) => {
                     <div className="py-5 text-muted w-100 text-center">Loading...</div>
                 ) : error ? (
                     <div className="py-5 text-danger w-100 text-center">{error}</div>
-                ) : filteredProducts.length === 0 ? (
-                    <div className="py-5 text-muted w-100 text-center">No products to display.</div>
+                ) : noResults ? (
+                    <div className="py-5 text-muted w-100 text-center">No products found matching "{search}"</div>
                 ) : (
+                    <>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 32, justifyContent: 'center' }}>
                       {filteredProducts.map(product => {
                         const isInWishlist = wishlistItems.some(item => item.id === product.id);
@@ -285,7 +465,17 @@ const DealsOne = ({ search = "" }) => {
                           </div>
                         );
                       })}
-                        </div>
+                    </div>
+                    
+                    {/* Always show pagination controls */}
+                    <div className="mt-5">
+                        <Pagination 
+                            currentPage={pagination.currentPage}
+                            totalPages={pagination.totalPages}
+                            onPageChange={handlePageChange}
+                        />
+                    </div>
+                    </>
                 )}
             </div>
         </section>
